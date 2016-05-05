@@ -1,1 +1,1 @@
-web: KituraStarter
+web: Kitura-Starter-Bluemix

@@ -5,11 +5,10 @@
 ![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
 [![Join the chat at https://gitter.im/IBM-Swift/Kitura](https://badges.gitter.im/IBM-Swift/Kitura.svg)](https://gitter.im/IBM-Swift/Kitura?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-**Starter application for Kitura Web Framework**
+**Bluemix starter application for Kitura web framework**
 
 ## Summary
-
-This is a starter [Kitura](https://github.com/IBM-Swift/Kitura) application meant to be used as a starting point to get your own Kitura application up and running. See instructions for [Installation on OS X ](https://github.com/IBM-Swift/Kitura#installation-os-x) or [Installation on Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based).
+Kitura-Starter-Bluemix is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on Bluemix. After cloning this GitHun repo to your local syste, you can deploy this application to Bluemix right away. If you'd also like to run Kitura-Starter-Bluemix locally, then see the instructions for installation on [OS X ](https://github.com/IBM-Swift/Kitura#installation-os-x) or installation on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) for details on system level dependencies you may need before attempting to execute this app.
 
 ## Clone, build and run
 1. `git clone https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git && cd Kitura-Starter-Bluemix`
@@ -17,18 +16,20 @@ This is a starter [Kitura](https://github.com/IBM-Swift/Kitura) application mean
 
 2. `make run`
 
-  You should see message _Listening on port 8090_. The result executable is located in `.build/debug` directory: `./.build/debug/KituraStarter`
+  You should see message _Listening on port 8090_. The result executable is located in `.build/debug` directory: `./.build/debug/Kitura-Starter-Bluemix`
+
 3. Open your browser at [http://localhost:8090](http://localhost:8090)
 
-## Pushing to Bluemix
-1. Update `manifest.yml` with your app name.
+4. Access static content using the following URL:[http://localhost:8090/static](http://localhost:8090/static)
 
-2. `cf push`
+## Pushing to Bluemix
+1. `cf push`
 > Note: You will need to be logged in to the Cloud Foundry CLI.
+
+2. Access your application route.
 
 ## Kitura Wiki
 Feel free to visit our [Wiki](https://github.com/IBM-Swift/Kitura/wiki) for our roadmap and some tutorials.
 
 ## License
-
-This sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
+Kitura-Starter-Bluemix app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).

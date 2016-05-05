@@ -17,10 +17,10 @@
 import PackageDescription
 
 let package = Package(
-    name: "KituraStarter",
+    name: "Kitura-Starter-Bluemix",
     targets: [
         Target(
-            name: "KituraStarter",
+            name: "Kitura-Starter-Bluemix",
             dependencies: []
         )
     ],
@@ -30,4 +30,3 @@ let package = Package(
         .Package(url: "https://github.com/IBM-Swift/Swift-cfenv", majorVersion: 0)
     ],
     exclude: ["Makefile", "Kitura-Build"])
-

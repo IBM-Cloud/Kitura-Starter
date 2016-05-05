@@ -24,6 +24,6 @@ Kitura-Build/build/Makefile:
 
 run: build
 	@echo --- Invoking KituraSample executable
-	./.build/debug/KituraStarter
+	./.build/debug/Kitura-Starter-Bluemix
 
 .PHONY: run

@@ -1,5 +1,5 @@
 applications:
-- name: <APP_NAME_HERE>
+- name: Kitura-Starter-Bluemix
   memory: 256M
   instances: 1
   random-route: true
