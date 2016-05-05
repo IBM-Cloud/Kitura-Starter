@@ -11,22 +11,20 @@
 Kitura-Starter-Bluemix is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on Bluemix. After cloning this GitHun repo to your local syste, you can deploy this application to Bluemix right away. If you'd also like to run Kitura-Starter-Bluemix locally, then see the instructions for installation on [OS X ](https://github.com/IBM-Swift/Kitura#installation-os-x) or installation on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) for details on system level dependencies you may need before attempting to execute this app.
 
 ## Clone, build and run
-1. `git clone https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git && cd Kitura-Starter-Bluemix`
-> Note: do not use the GitHub "Download ZIP" button
+1. Clone this repo using `git clone https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git && cd Kitura-Starter-Bluemix`. Please do not use the GitHub `Download ZIP` button.
 
-2. `make run`
+2. Compile and execute the server app using: `make run`. Once the server starts, you should see the message _Listening on port 8090_. The executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter-Bluemix`.
 
-  You should see message _Listening on port 8090_. The result executable is located in `.build/debug` directory: `./.build/debug/Kitura-Starter-Bluemix`
+3. Open your browser at [http://localhost:8090](http://localhost:8090).
 
-3. Open your browser at [http://localhost:8090](http://localhost:8090)
-
-4. Access static content using the following URL:[http://localhost:8090/static](http://localhost:8090/static)
+4. Access static content using the following URL:[http://localhost:8090/static](http://localhost:8090/static).
 
 ## Pushing to Bluemix
-1. `cf push`
-> Note: You will need to be logged in to the Cloud Foundry CLI.
+You should have the Cloud Foundry command line installed on your system and you should be already logged on to Bluemix before you attempt the following steps.
 
-2. Access your application route.
+1. From the root folder of this repo on your local system, execute `cf push`.
+
+2. Once the application is pushed to and running on Bluemix, you can access your application route to see Kitura's welcome page on your browser.
 
 ## Kitura Wiki
 Feel free to visit our [Wiki](https://github.com/IBM-Swift/Kitura/wiki) for our roadmap and some tutorials.
