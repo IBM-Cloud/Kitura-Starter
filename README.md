@@ -26,6 +26,9 @@ You should have the Cloud Foundry command line installed on your system and you 
 
 2. Once the application is pushed to and running on Bluemix, you can access your application route to see Kitura's welcome page on your browser.
 
+## Swift version
+This version of Kitura-Starter-Bluemix works with the DEVELOPMENT-SNAPSHOT-2016-05-03-a version of the Swift binaries. You can download this version of the Swift binaries by following this [link](https://swift.org/download/). Compatibility with other Swift versions is not guaranteed.
+
 ## Kitura Wiki
 Feel free to visit our [Wiki](https://github.com/IBM-Swift/Kitura/wiki) for our roadmap and some tutorials.
 
