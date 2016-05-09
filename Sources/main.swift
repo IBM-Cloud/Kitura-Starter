@@ -36,7 +36,7 @@ router.all("/static", middleware: StaticFileServer())
 router.get("/hello") { _, response, next in
   response.setHeader("Content-Type", value: "text/plain; charset=utf-8")
   do {
-    try response.status(HttpStatusCode.OK).send("Hello from Kitura-Starter-Bluemix!").end()
+    try response.status(.OK).send("Hello from Kitura-Starter-Bluemix!").end()
   } catch {
     Log.error("Failed to send response to client: \(error)")
   }
@@ -47,9 +47,9 @@ router.post("/hello") { request, response, next in
   response.setHeader("Content-Type", value: "text/plain; charset=utf-8")
   do {
     if let name = try request.readString() {
-      try response.status(HttpStatusCode.OK).send("Hello \(name), from Kitura-Starter-Bluemix!").end()
+      try response.status(.OK).send("Hello \(name), from Kitura-Starter-Bluemix!").end()
     } else {
-      try response.status(HttpStatusCode.OK).send("Kitura-Starter-Bluemix received a POST request!").end()
+      try response.status(.OK).send("Kitura-Starter-Bluemix received a POST request!").end()
     }
   } catch {
     Log.error("Failed to send response to client: \(error)")
@@ -60,7 +60,7 @@ router.post("/hello") { request, response, next in
 do {
   let appEnv = try CFEnvironment.getAppEnv()
   let port: Int = appEnv.port
-  let server = HttpServer.listen(port: port, delegate: router)
+  let server = HTTPServer.listen(port: port, delegate: router)
   Server.run()
   Log.info("Server is started on \(appEnv.url).")
 } catch CFEnvironmentError.InvalidValue {
