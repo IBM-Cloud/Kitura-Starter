@@ -34,7 +34,7 @@ router.all("/static", middleware: StaticFileServer())
 
 // Basic GET request
 router.get("/hello") { _, response, next in
-  response.setHeader("Content-Type", value: "text/plain; charset=utf-8")
+  response.headers["Content-Type"] = "text/plain; charset=utf-8"
   do {
     try response.status(.OK).send("Hello from Kitura-Starter-Bluemix!").end()
   } catch {
@@ -44,7 +44,7 @@ router.get("/hello") { _, response, next in
 
 // Basic POST request
 router.post("/hello") { request, response, next in
-  response.setHeader("Content-Type", value: "text/plain; charset=utf-8")
+  response.headers["Content-Type"] = "text/plain; charset=utf-8"
   do {
     if let name = try request.readString() {
       try response.status(.OK).send("Hello \(name), from Kitura-Starter-Bluemix!").end()
