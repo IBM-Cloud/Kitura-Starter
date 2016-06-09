@@ -21,7 +21,7 @@ import KituraSys
 import KituraNet
 import LoggerAPI
 import HeliumLogger
-import CFEnvironment
+import CloudFoundryEnv
 
 // All web apps need a Router instance to define routes
 let router = Router()
@@ -58,11 +58,11 @@ router.post("/hello") { request, response, next in
 
 // Start Kitura-Starter-Bluemix server
 do {
-  let appEnv = try CFEnvironment.getAppEnv()
+  let appEnv = try CloudFoundryEnv.getAppEnv()
   let port: Int = appEnv.port
   let server = HTTPServer.listen(port: port, delegate: router)
   Server.run()
   Log.info("Server is started on \(appEnv.url).")
-} catch CFEnvironmentError.InvalidValue {
+} catch CloudFoundryEnvError.InvalidValue {
   Log.error("Oops... something went wrong. Server did not start!")
 }
