@@ -24,7 +24,7 @@ import HeliumLogger
 import CloudFoundryEnv
 
 // Disable all buffering of stdout
-setbuf(stdout, nil);
+setbuf(stdout, nil)
 
 // All web apps need a Router instance to define routes
 let router = Router()
