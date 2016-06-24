@@ -36,25 +36,17 @@ router.all("/static", middleware: StaticFileServer())
 router.get("/hello") { _, response, next in
   Log.debug("GET - /hello route handler...")
   response.headers["Content-Type"] = "text/plain; charset=utf-8"
-  do {
-    try response.status(.OK).send("Hello from Kitura-Starter-Bluemix!").end()
-  } catch {
-    Log.error("Failed to send response to client: \(error)")
-  }
+  try response.status(.OK).send("Hello from Kitura-Starter-Bluemix!").end()
 }
 
 // Basic POST request
 router.post("/hello") { request, response, next in
   Log.debug("POST - /hello route handler...")
   response.headers["Content-Type"] = "text/plain; charset=utf-8"
-  do {
-    if let name = try request.readString() {
-      try response.status(.OK).send("Hello \(name), from Kitura-Starter-Bluemix!").end()
-    } else {
-      try response.status(.OK).send("Kitura-Starter-Bluemix received a POST request!").end()
-    }
-  } catch {
-    Log.error("Failed to send response to client: \(error)")
+  if let name = try request.readString() {
+    try response.status(.OK).send("Hello \(name), from Kitura-Starter-Bluemix!").end()
+  } else {
+    try response.status(.OK).send("Kitura-Starter-Bluemix received a POST request!").end()
   }
 }
 
@@ -62,9 +54,9 @@ router.post("/hello") { request, response, next in
 do {
   let appEnv = try CloudFoundryEnv.getAppEnv()
   let port: Int = appEnv.port
-  let server = HTTPServer.listen(port: port, delegate: router)
   Log.info("Server will be started on '\(appEnv.url)'.")
-  Server.run()
+  Kitura.addHTTPServer(onPort: port, with: router)
+  Kitura.run()
 } catch CloudFoundryEnvError.InvalidValue {
   Log.error("Oops... something went wrong. Server did not start!")
 }
