@@ -19,7 +19,7 @@ export KITURA_CI_BUILD_SCRIPTS_DIR=Kitura-Build/build
 
 Kitura-Build/build/Makefile:
 	@echo --- Fetching Kitura-Build submodule
-	git submodule update --init
+	git submodule update --init --remote --merge --recursive
 
 run: build
 	@echo --- Invoking KituraSample executable
