@@ -29,4 +29,4 @@ let package = Package(
         .Package(url: "https://github.com/IBM-Swift/HeliumLogger.git", majorVersion: 0, minor: 12),
         .Package(url: "https://github.com/IBM-Swift/Swift-cfenv", majorVersion: 1, minor: 4)
     ],
-    exclude: ["Makefile", "Kitura-Build"])
+    exclude: ["Makefile", "Package-Builder"])
