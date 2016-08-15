@@ -1,5 +1,5 @@
 app:
-  image: ibmcom/kitura-ubuntu
+  image: ibmcom/swift-ubuntu
   ports:
     - "8090:8090"
   volumes:
