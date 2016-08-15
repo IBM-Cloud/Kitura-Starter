@@ -10,6 +10,7 @@ branches:
   only:
     - master
     - develop
+    - migrate_0725
 
 notifications:
   slack:
