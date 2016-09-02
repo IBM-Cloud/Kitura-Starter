@@ -22,7 +22,7 @@ import KituraNet
 import LoggerAPI
 import HeliumLogger
 import CloudFoundryEnv
-import CloudFoundryDeploymentTracker
+//import CloudFoundryDeploymentTracker
 
 // Disable all buffering of stdout
 setbuf(stdout, nil)
@@ -59,7 +59,7 @@ do {
   let appEnv = try CloudFoundryEnv.getAppEnv()
   let port: Int = appEnv.port
   Log.info("Server will be started on '\(appEnv.url)'.")
-  CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git", codeVersion: nil).track()
+  //CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git", codeVersion: nil).track()
   Kitura.addHTTPServer(onPort: port, with: router)
   Kitura.run()
 } catch CloudFoundryEnvError.InvalidValue {
