@@ -22,7 +22,7 @@ Package-Builder/build/Makefile:
 	git submodule update --init --remote --merge --recursive
 
 run: build
-	@echo --- Invoking KituraSample executable
+	@echo --- Invoking Kitura-Starter-Bluemix executable
 	./.build/debug/Kitura-Starter-Bluemix
 
 .PHONY: run
