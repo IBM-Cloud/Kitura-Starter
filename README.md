@@ -44,7 +44,7 @@ You should have the Cloud Foundry command line installed on your system and you 
 ## Kitura Wiki
 Feel free to visit our [Wiki](https://github.com/IBM-Swift/Kitura/wiki) for our roadmap and some tutorials.
 
-
+<!---
 ## Privacy Notice
 This Swift application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) service on each deployment:
 
@@ -63,7 +63,7 @@ This data is collected from the parameters of the `CloudFoundryDeploymentTracker
 Deployment tracking can be disabled by removing the following line from `main.swift`:
 
     CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git", codeVersion: nil).track()
-
+-->
 
 ## License
 The Kitura-Starter-Bluemix sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
