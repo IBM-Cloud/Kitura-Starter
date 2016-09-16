@@ -5,7 +5,9 @@
 ![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)
 ![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
 [![Join the chat at https://gitter.im/IBM-Swift/Kitura](https://badges.gitter.im/IBM-Swift/Kitura.svg)](https://gitter.im/IBM-Swift/Kitura?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+<!---
 ![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/c42412830c143a76568abe1fb2c0b3ea/badge.svg)
+-->
 
 **Bluemix starter application for Kitura web framework and HTTP server**
 
