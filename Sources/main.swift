@@ -17,7 +17,7 @@
 // Kitura-Starter-Bluemix shows examples for creating custom routes.
 import Foundation
 import Kitura
-import KituraSys
+//import KituraSys
 import KituraNet
 import LoggerAPI
 import HeliumLogger
