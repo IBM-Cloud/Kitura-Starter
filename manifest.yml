@@ -4,4 +4,4 @@ applications:
   instances: 1
   random-route: true
   disk_quota: 1024M
-  buildpack: https://github.com/IBM-Swift/swift-buildpack.git#develop
+  buildpack: swift_buildpack
