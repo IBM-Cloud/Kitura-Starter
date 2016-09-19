@@ -14,17 +14,16 @@
 * limitations under the License.
 **/
 
-// Kitura-Starter-Bluemix shows examples for creating custom routes.
+// Kitura-Starter-Bluemix contains examples for creating custom routes.
 import Foundation
 import Kitura
-//import KituraSys
 import KituraNet
 import LoggerAPI
 import HeliumLogger
 import CloudFoundryEnv
-//import CloudFoundryDeploymentTracker
+import CloudFoundryDeploymentTracker
 
-// Disable all buffering of stdout
+// Disable all buffering on stdout
 setbuf(stdout, nil)
 
 // All web apps need a Router instance to define routes
@@ -59,7 +58,7 @@ do {
   let appEnv = try CloudFoundryEnv.getAppEnv()
   let port: Int = appEnv.port
   Log.info("Server will be started on '\(appEnv.url)'.")
-  //CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git", codeVersion: nil).track()
+  CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git", codeVersion: nil).track()
   Kitura.addHTTPServer(onPort: port, with: router)
   Kitura.run()
 } catch CloudFoundryEnvError.InvalidValue {
