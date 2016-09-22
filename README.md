@@ -20,9 +20,13 @@ This version of Kitura-Starter-Bluemix works with the Swift 3.0 RELEASE binaries
 
 2. Compile and execute the server app using: `make run`. Once the server starts, you should see the message _Listening on port 8090_. The executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter-Bluemix`.
 
-3. Open your browser at [http://localhost:8090](http://localhost:8090).
+3. Open your browser at [http://localhost:8090](http://localhost:8090) to access Kitura's welcome page.
 
-4. Access static content using the following URL:[http://localhost:8090/static](http://localhost:8090/static).
+4. To access static HTML content served from the Kitura-Stater-Bluemix app, point your browser to: [http://localhost:8090/static](http://localhost:8090/static).
+
+5. To access a plain text greeting, point your browser to: [http://localhost:8090/hello](http://localhost:8090/hello).
+
+6. To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to the following endpoint: [http://localhost:8090/hello](http://localhost:8090/hello). You should get a text response that includes the string you sent to the endpoint.
 
 ## Pushing the application to Bluemix
 ### Using the Deploy to Bluemix button
@@ -35,7 +39,7 @@ Clicking on the button below deploys this sample application to Bluemix. The `ma
 
 Once deployment to Bluemix is completed, you should access the route assigned to your application using the web browser of your choice. You should see the Kitura welcome page!
 
-Note that the [Bluemix buildpack for Swift](https://github.com/IBM-Swift/swift-buildpack) is used for the deployment of BluePic to Bluemix. This buildpack is currently installed in the following Bluemix regions: US South, United Kingdom, and Sydney.
+Note that the [IBM Bluemix buildpack for Swift](https://github.com/IBM-Swift/swift-buildpack) is used for the deployment of this app to Bluemix. This IBM Bluemix buildpack for Swift is currently installed in the following Bluemix regions: US South, United Kingdom, and Sydney.
 
 ### Using the Cloud Foundry command line
 You should have the Cloud Foundry command line installed on your system and you should be already logged on to Bluemix before you attempt the following steps.
