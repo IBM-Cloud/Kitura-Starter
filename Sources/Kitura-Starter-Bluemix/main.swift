@@ -32,6 +32,7 @@ do {
   Kitura.addHTTPServer(onPort: controller.port, with: controller.router)
   // Start Kitura-Starter-Bluemix server
   Kitura.run()
-} catch CloudFoundryEnvError.InvalidValue {
+} catch let error {
+  Log.error(error.localizedDescription)
   Log.error("Oops... something went wrong. Server did not start!")
 }
