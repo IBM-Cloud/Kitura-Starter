@@ -30,36 +30,41 @@ public class Controller {
     router.all("/", middleware: StaticFileServer())
 
     // Basic GET request
-    router.get("/hello") { _, response, next in
-      Log.debug("GET - /hello route handler...")
-      response.headers["Content-Type"] = "text/plain; charset=utf-8"
-      try response.status(.OK).send("Hello from Kitura-Starter-Bluemix!").end()
-    }
+    router.get("/hello", handler: getHello)
 
     // Basic POST request
-    router.post("/hello") { request, response, next in
-      Log.debug("POST - /hello route handler...")
-      response.headers["Content-Type"] = "text/plain; charset=utf-8"
-      if let name = try request.readString() {
-        try response.status(.OK).send("Hello \(name), from Kitura-Starter-Bluemix!").end()
-      } else {
-        try response.status(.OK).send("Kitura-Starter-Bluemix received a POST request!").end()
-      }
-    }
+    router.post("/hello", handler: postHello)
 
     // JSON Get request
-    router.get("/json") { _, response, next in
-      Log.debug("GET - /json route handler...")
-      response.headers["Content-Type"] = "text/json; charset=utf-8"
-      var jsonResponse = JSON([:])
-      jsonResponse["framework"].stringValue = "Kitura"
-      jsonResponse["applicationName"].stringValue = "Kitura-Starter-Bluemix"
-      jsonResponse["company"].stringValue = "IBM"
-      jsonResponse["organization"].stringValue = "Swift @ IBM"
-      jsonResponse["location"].stringValue = "Austin, Texas"
-      try response.status(.OK).send(json: jsonResponse).end()
-    }
+    router.get("/json", handler: getJSON)
+  }
 
+  public func getHello(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
+    Log.debug("GET - /hello route handler...")
+    response.headers["Content-Type"] = "text/plain; charset=utf-8"
+    try response.status(.OK).send("Hello from Kitura-Starter-Bluemix!").end()
+  }
+
+  public func postHello(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
+    Log.debug("POST - /hello route handler...")
+    response.headers["Content-Type"] = "text/plain; charset=utf-8"
+    if let name = try request.readString() {
+      try response.status(.OK).send("Hello \(name), from Kitura-Starter-Bluemix!").end()
+    } else {
+      try response.status(.OK).send("Kitura-Starter-Bluemix received a POST request!").end()
+    }
+  }
+
+  public func getJSON(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
+    Log.debug("GET - /json route handler...")
+    response.headers["Content-Type"] = "text/json; charset=utf-8"
+    var jsonResponse = JSON([:])
+    jsonResponse["framework"].stringValue = "Kitura"
+    jsonResponse["applicationName"].stringValue = "Kitura-Starter-Bluemix"
+    jsonResponse["company"].stringValue = "IBM"
+    jsonResponse["organization"].stringValue = "Swift @ IBM"
+    jsonResponse["location"].stringValue = "Austin, Texas"
+    try response.status(.OK).send(json: jsonResponse).end()
   }
 
 }
