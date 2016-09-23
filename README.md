@@ -20,7 +20,7 @@ This version of Kitura-Starter-Bluemix works with the Swift 3.0 RELEASE binaries
 
 2. Compile and execute the server app using: `make run`. Once the server starts, you should see the message _Listening on port 8090_. The executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter-Bluemix`.
 
-3. Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter-Bluemix app. This page displays static HTML content served from the Kitura-based server.
+3. Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter-Bluemix app. This page displays static HTML content served from the Kitura-based server. Explore the `public` folder to see the HTML file and resources in it.
 
 4. To access a plain text greeting, point your browser to: [http://localhost:8090/hello](http://localhost:8090/hello).
 
