@@ -34,7 +34,7 @@ let router = Router()
 Log.logger = HeliumLogger()
 
 // Serve static content from "public"
-router.all("/static", middleware: StaticFileServer())
+router.all("/", middleware: StaticFileServer())
 
 // Basic GET request
 router.get("/hello") { _, response, next in
