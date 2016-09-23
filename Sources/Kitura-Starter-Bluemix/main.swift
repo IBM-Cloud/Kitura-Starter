@@ -22,18 +22,15 @@ import HeliumLogger
 import CloudFoundryEnv
 import CloudFoundryDeploymentTracker
 
-// Start Kitura-Starter-Bluemix server
 do {
   // Using the HeliumLogger implementation for Logger
   // HeliumLogger disables all buffering on stdout
-  // setbuf(stdout, nil)
   Log.logger = HeliumLogger()
-  let controller = Controller()
-  let appEnv = try CloudFoundryEnv.getAppEnv()
-  let port: Int = appEnv.port
-  Log.info("Server will be started on '\(appEnv.url)'.")
+  let controller = try Controller()
+  Log.info("Server will be started on '\(controller.url)'.")
   CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git", codeVersion: nil).track()
-  Kitura.addHTTPServer(onPort: port, with: controller.router)
+  Kitura.addHTTPServer(onPort: controller.port, with: controller.router)
+  // Start Kitura-Starter-Bluemix server
   Kitura.run()
 } catch CloudFoundryEnvError.InvalidValue {
   Log.error("Oops... something went wrong. Server did not start!")
