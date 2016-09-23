@@ -69,7 +69,7 @@ public class Controller {
 
   public func getJSON(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("GET - /json route handler...")
-    response.headers["Content-Type"] = "text/json; charset=utf-8"
+    response.headers["Content-Type"] = "application/json; charset=utf-8"
     var jsonResponse = JSON([:])
     jsonResponse["framework"].stringValue = "Kitura"
     jsonResponse["applicationName"].stringValue = "Kitura-Starter-Bluemix"
