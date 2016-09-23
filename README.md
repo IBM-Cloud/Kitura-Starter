@@ -87,23 +87,59 @@ Once the server starts, you should see the message _Listening on port 8090_ as s
 
 ## Pushing the application to Bluemix
 ### Using the Deploy to Bluemix button
-Clicking on the button below deploys this sample application to Bluemix. The `manifest.yml` file [included in the repo] is parsed to obtain the name of the application and configuration details. For further details on the structure of the `manifest.yml` file, see the [Cloud Foundry documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#minimal-manifest).
+Clicking on the button below deploys this starter application to Bluemix. The `manifest.yml` file [included in the repo] is parsed to obtain the name of the application and configuration details. For further details on the structure of the `manifest.yml` file, see the [Cloud Foundry documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#minimal-manifest).
 
 <!---
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
 -->
 [![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/c42412830c143a76568abe1fb2c0b3ea/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git)
 
-Once deployment to Bluemix is completed, you should access the route assigned to your application using the web browser of your choice. You should see the welcome page for the Kitura-Starter-Bluemix app.
+Once deployment to Bluemix is completed, you can access the route assigned to your application using the web browser of your choice. You should see the welcome page for the Kitura-Starter-Bluemix app! To access a plain text greeting, point your browser to `http://<application_route>/hello`. To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to `http://<application_route>/hello`. You should get a text response that includes the string you sent to the endpoint. Finally, to receive a JSON payload, point your browser to `http://<application_route>/json`.
 
 Note that the [IBM Bluemix buildpack for Swift](https://github.com/IBM-Swift/swift-buildpack) is used for the deployment of this app to Bluemix. This IBM Bluemix buildpack for Swift is currently installed in the following Bluemix regions: US South, United Kingdom, and Sydney.
 
 ### Using the Cloud Foundry command line
-You should have the Cloud Foundry command line installed on your system and you should be already logged on to Bluemix before you attempt the following steps.
+You can also manually deploy the app to Bluemix.  Though not as magical as using the Bluemix button above, manually deploying the app gives you some insights about what is happening behind the scenes.  Remember that you'd need the Cloud Foundry [command line](https://www.ng.bluemix.net/docs/starters/install_cli.html) installed on your system to deploy the app to Bluemix.
+
+Using the Cloud Foundry command line you can get a list of the buildpacks (along with their versions) that are installed on Bluemix. Note that you should be already logged on to Bluemix before you issue any of the following commands.
+
+Executing the `cf buildpacks` above command should result in output similar to the following:
+
+```
+$ cf buildpacks
+Getting buildpacks...
+
+buildpack                              position   enabled   locked   filename
+liberty-for-java                       1          true      false    buildpack_liberty-for-java_v3.3-20160912-1729.zip
+sdk-for-nodejs                         2          true      false    buildpack_sdk-for-nodejs_v3.7-20160826-1101.zip
+dotnet-core                            3          true      false    buildpack_dotnet-core_v1.0-20160826-1345.zip
+swift_buildpack                        4          true      false    buildpack_swift_v2.0.0-20160915-1220.zip
+java_buildpack                         5          true      false    java-buildpack-v3.6.zip
+ruby_buildpack                         6          true      false    ruby_buildpack-cached-v1.6.16.zip
+nodejs_buildpack                       7          true      false    nodejs_buildpack-cached-v1.5.11.zip
+go_buildpack                           8          true      false    go_buildpack-cached-v1.7.5.zip
+python_buildpack                       9          true      false    python_buildpack-cached-v1.5.5.zip
+php_buildpack                          10         true      false    php_buildpack-cached-v4.3.10.zip
+xpages_buildpack                       11         true      false    xpages_buildpack_v1.1.1-20160518-0936.zip
+staticfile_buildpack                   12         true      false    staticfile_buildpack-cached-v1.3.6.zip
+binary_buildpack                       13         true      false    binary_buildpack-cached-v1.0.1.zip
+xpages_buildpack_v1_0_0-20160310-144   14         true      false    xpages_buildpack_v1.0.0-20160310-1442.zip
+swift_buildpack_v1_1_1                 15         true      false    swift_buildpack-cached-v1.1.1.zip
+dotnet-core_v0_9-20160706-1603         16         true      false    buildpack_dotnet-core_v0.9-20160706-1603.zip
+sdk-for-nodejs_v3_7-20160823-1528      17         true      false    buildpack_sdk-for-nodejs_v3.7-20160823-1528.zip
+liberty-for-java_v3_2-20160822-2200    18         true      false    buildpack_liberty-for-java_v3.2-20160822-2200.zip
+swift_buildpack_v1_1_6-20160729-1205   19         true      false    buildpack_swift_v1.1.6-20160729-1205.zip
+```
+
+Looking at the output above, we can see that the IBM Bluemix buildpack for Swift (v2.0.0) is installed on Bluemix. This will allow a seamless deployment of the starter application to Bluemix. After you have cloned this Git repo, go to its root folder on your system and issue the following command Cloud Foundry command:
+
+```
+cf push
+```
 
 1. From the root folder of this repo on your local system, execute `cf push`.
 
-2. Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter-Bluemix app.
+2. Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter-Bluemix app. You can log on to your [Bluemix account](https://console.ng.bluemix.net) to find the route of your application or you can inspect the output from the execution of the `cf push` command.  The string value (e.g. swift-helloworld.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
 
 ## Kitura Wiki
 Feel free to visit our [Wiki](https://github.com/IBM-Swift/Kitura/wiki) for our roadmap and some tutorials.
