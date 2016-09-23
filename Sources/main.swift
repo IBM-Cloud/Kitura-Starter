@@ -20,6 +20,7 @@ import Kitura
 import KituraNet
 import LoggerAPI
 import HeliumLogger
+import SwiftyJSON
 import CloudFoundryEnv
 import CloudFoundryDeploymentTracker
 
@@ -51,6 +52,19 @@ router.post("/hello") { request, response, next in
   } else {
     try response.status(.OK).send("Kitura-Starter-Bluemix received a POST request!").end()
   }
+}
+
+// JSON Get request
+router.get("/json") { _, response, next in
+  Log.debug("GET - /json route handler...")
+  response.headers["Content-Type"] = "text/json; charset=utf-8"
+  var jsonResponse = JSON([:])
+  jsonResponse["framework"].stringValue = "Kitura"
+  jsonResponse["applicationName"].stringValue = "Kitura-Starter-Bluemix"
+  jsonResponse["company"].stringValue = "IBM"
+  jsonResponse["organization"].stringValue = "Swift @ IBM"
+  jsonResponse["location"].stringValue = "Austin, Texas"
+  try response.status(.OK).send(json: jsonResponse).end()
 }
 
 // Start Kitura-Starter-Bluemix server
