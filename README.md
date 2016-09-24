@@ -22,9 +22,10 @@ If you are interested in manually deploying the application to Bluemix, you'll n
 ## Clone, build, and run locally
 Once you have installed the Swift compiler and any system level dependencies required by the Kitura framework, you can proceed with the steps described in this section.
 
-1. Clone this repo using `git clone https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git` and go to the root folder using `cd Kitura-Starter-Bluemix`.
+1) Clone this repo using `git clone https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git` and go to the root folder using `cd Kitura-Starter-Bluemix`.
 
-2. Go to the root folder of this repo on your system and issue the `make run` command to compile and execute the starter app:
+2) Go to the root folder of this repo on your system and issue the `make run` command to compile and execute the starter app:
+
 ```
 $ make run
 make SWIFT_BUILD_CONFIGURATION="debug" SWIFTC_FLAGS="-Xswiftc -DDEBUG" _build
@@ -73,15 +74,16 @@ Linking ./.build/debug/Kitura-Starter-Bluemix
  VERBOSE: run() Kitura.swift line 73 - Starting an HTTP Server on port 8090...
  INFO: listen(socket:port:) HTTPServer.swift line 128 - Listening on port 8090
 ```
+
 Once the server starts, you should see the message _Listening on port 8090_ as shown above. Note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter-Bluemix`.
 
-3. Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter-Bluemix app. This page displays static HTML content served from the Kitura-based server application. Explore the `public` folder to see the HTML file and resources in it.
+3) Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter-Bluemix app. This page displays static HTML content served from the Kitura-based server application. Explore the `public` folder to see the HTML file and resources in it.
 
-4. To access a plain text greeting, point your browser to: [http://localhost:8090/hello](http://localhost:8090/hello).
+4) To access a plain text greeting, point your browser to: [http://localhost:8090/hello](http://localhost:8090/hello).
 
-5. To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to the following endpoint: [http://localhost:8090/hello](http://localhost:8090/hello). You should get a text response that includes the string you sent to the endpoint.
+5) To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to the following endpoint: [http://localhost:8090/hello](http://localhost:8090/hello). You should get a text response that includes the string you sent to the endpoint.
 
-6. To receive a JSON payload, point your browser to: [http://localhost:8090/json](http://localhost:8090/json).
+6) To receive a JSON payload, point your browser to: [http://localhost:8090/json](http://localhost:8090/json).
 
 ## Pushing the application to Bluemix
 ### Using the Deploy to Bluemix button
@@ -129,15 +131,134 @@ liberty-for-java_v3_2-20160822-2200    18         true      false    buildpack_l
 swift_buildpack_v1_1_6-20160729-1205   19         true      false    buildpack_swift_v1.1.6-20160729-1205.zip
 ```
 
-Looking at the output above, we can see that the IBM Bluemix buildpack for Swift (v2.0.0) is installed on Bluemix. This will allow a seamless deployment of the starter application to Bluemix. After you have cloned this Git repo, go to its root folder on your system and issue the following command Cloud Foundry command:
+Looking at the output above, we can see that the IBM Bluemix buildpack for Swift (v2.0.0) is installed on Bluemix. This will allow a seamless deployment of the starter application to Bluemix. After you have cloned this Git repo, go to its root folder on your system and issue the `cf push` command:
 
 ```
-cf push
+$ cf push
+Using manifest file /Users/olivieri/git/Kitura-Starter-Bluemix/manifest.yml
+
+Creating app Kitura-Starter-Bluemix in org roliv@us.ibm.com / space dev as roliv@us.ibm.com...
+OK
+
+Creating route kitura-starter-bluemix-unfiducial-flab.eu-gb.mybluemix.net...
+OK
+
+Binding kitura-starter-bluemix-unfiducial-flab.eu-gb.mybluemix.net to Kitura-Starter-Bluemix...
+OK
+
+Uploading Kitura-Starter-Bluemix...
+Uploading app files from: /Users/olivieri/git/Kitura-Starter-Bluemix
+Uploading 110.4K, 60 files
+Done uploading               
+OK
+
+Starting app Kitura-Starter-Bluemix in org roliv@us.ibm.com / space dev as roliv@us.ibm.com...
+-----> Downloaded app package (56K)
+-----> Default supported Swift version is 3.0
+-----> Installing system level dependencies...
+-----> Installing libblocksruntime0_0.1-1_amd64.deb
+-----> Installing libblocksruntime-dev_0.1-1_amd64.deb
+-----> Installing libcurl3_7.35.0-1ubuntu2.6_amd64.deb
+-----> Installing libkqueue0_1.0.4-2ubuntu1_amd64.deb
+-----> Installing libssl-dev_1.0.1f-1ubuntu2.19_amd64.deb
+-----> Installing openssl_1.0.1f-1ubuntu2.19_amd64.deb
+-----> Installing uuid-dev_2.20.1-5.1ubuntu20_amd64.deb
+-----> No Aptfile found.
+-----> Writing profile script...
+-----> Installing Swift 3.0
+-----> Buildpack version 2.0.0
+       Downloaded Swift
+-----> Installing Clang 3.8.0
+       Downloaded Clang
+-----> This buildpack does not add libdispatch binaries for swift-3.0 (note: Swift binaries from 8/23 and later already include libdispatch)
+-----> Building Package...
+       Cloning https://github.com/IBM-Swift/Kitura.git
+       HEAD is now at 164f5df Merge branch 'master' into automatic_migration_to_1.0.0
+       Resolved version: 1.0.0
+       Cloning https://github.com/IBM-Swift/Kitura-net.git
+       HEAD is now at 34b6d06 updated dependency versions in Package.swift
+       Resolved version: 1.0.0
+       Cloning https://github.com/IBM-Swift/LoggerAPI.git
+       HEAD is now at d4c1682 Regenerated API Documentation (#15)
+       Resolved version: 1.0.0
+       Cloning https://github.com/IBM-Swift/BlueSocket.git
+       HEAD is now at 6fc0f37 Update to latest (3.0.1 BETA 1) toolchain.
+       Resolved version: 0.11.11
+       Cloning https://github.com/IBM-Swift/CCurl.git
+       HEAD is now at 3330699 Removed use of pkgConfig and added system declaration
+       Resolved version: 0.2.1
+       Cloning https://github.com/IBM-Swift/CHTTPParser.git
+       HEAD is now at 429eff6 Merge pull request #7 from ianpartridge/master
+       Resolved version: 0.3.0
+       Cloning https://github.com/IBM-Swift/BlueSSLService.git
+       HEAD is now at 2d674f6 Update to latest (3.0.1 BETA 1) toolchain.
+       Resolved version: 0.11.21
+       Cloning https://github.com/IBM-Swift/OpenSSL.git
+       Resolved version: 0.11.21
+       Cloning https://github.com/IBM-Swift/OpenSSL.git
+       HEAD is now at b5df08f Merge pull request #2 from preecet/master
+       Resolved version: 0.2.2
+       Cloning https://github.com/IBM-Swift/CEpoll.git
+       HEAD is now at 111cbcb IBM-Swift/Kitura#435 Added a README.md file
+       Cloning https://github.com/IBM-Swift/SwiftyJSON.git
+       HEAD is now at 73b523a 3.0
+       Resolved version: 14.2.0
+       Cloning https://github.com/IBM-Swift/Kitura-TemplateEngine.git
+       HEAD is now at f013da3 Regenerated API Documentation (#8)
+       Resolved version: 1.0.0
+       Cloning https://github.com/IBM-Swift/HeliumLogger.git
+       HEAD is now at 4a52f0b updated dependency versions in Package.swift
+       Resolved version: 1.0.0
+       Cloning https://github.com/IBM-Swift/Swift-cfenv.git
+       HEAD is now at 04d7d88 Update swift version to 3.0
+       Resolved version: 1.7.0
+       Cloning https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git
+       HEAD is now at ea2728c Updated Package.swift - References Kitura-net official release.
+       Resolved version: 0.4.0
+       Compile CHTTPParser http_parser.c
+       Compile CHTTPParser utils.c
+       Compile Swift Module 'Socket' (3 sources)
+       Compile Swift Module 'LoggerAPI' (1 sources)
+       Compile Swift Module 'SwiftyJSON' (2 sources)
+       Compile Swift Module 'KituraTemplateEngine' (1 sources)
+       Compile Swift Module 'HeliumLogger' (1 sources)
+       Compile Swift Module 'SSLService' (1 sources)
+       Compile Swift Module 'KituraNet' (29 sources)
+       Compile Swift Module 'CloudFoundryEnv' (7 sources)
+       Compile Swift Module 'CloudFoundryDeploymentTracker' (1 sources)
+       Compile Swift Module 'Kitura' (40 sources)
+       Compile Swift Module 'Kitura_Starter_Bluemix' (2 sources)
+       Linking ./.build/release/Kitura-Starter-Bluemix
+-----> Copying dynamic libraries
+-----> Copying binaries to 'bin'
+-----> Cleaning up build files
+-----> Cleaning up cache folder
+
+-----> Uploading droplet (17M)
+
+1 of 1 instances running
+
+App started
+
+
+OK
+
+App Kitura-Starter-Bluemix was started using this command `Kitura-Starter-Bluemix`
+OK
+
+requested state: started
+instances: 1/1
+usage: 256M x 1 instances
+urls: kitura-starter-bluemix-unfiducial-flab.eu-gb.mybluemix.net
+last uploaded: Sat Sep 24 00:11:48 UTC 2016
+stack: cflinuxfs2
+buildpack: swift_buildpack
+
+     state     since                    cpu    memory          disk        details
+#0   running   2016-09-23 08:14:40 PM   0.0%   18.9M of 256M   59M of 1G
 ```
 
-1. From the root folder of this repo on your local system, execute `cf push`.
-
-2. Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter-Bluemix app. You can log on to your [Bluemix account](https://console.ng.bluemix.net) to find the route of your application or you can inspect the output from the execution of the `cf push` command.  The string value (e.g. swift-helloworld.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
+Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter-Bluemix app. You can log on to your [Bluemix account](https://console.ng.bluemix.net) to find the route of your application or you can inspect the output from the execution of the `cf push` command.  The string value (e.g. kitura-starter-bluemix-unfiducial-flab.eu-gb.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
 
 ## Kitura Wiki
 Feel free to visit our [Wiki](https://github.com/IBM-Swift/Kitura/wiki) for our roadmap and some tutorials.
