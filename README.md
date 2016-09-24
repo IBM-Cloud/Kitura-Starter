@@ -22,7 +22,7 @@ If you are interested in manually deploying the application to Bluemix, you'll n
 ## Clone, build, and run locally
 Once you have installed the Swift compiler and any system level dependencies required by the Kitura framework, you can proceed with the steps described in this section.
 
-1) Clone this repo using `git clone https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git` and go to the root folder using `cd Kitura-Starter-Bluemix`.
+1) Clone this repo using `git clone https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git`.
 
 2) Go to the root folder of this repo on your system and issue the `make run` command to compile and execute the starter app:
 
@@ -77,13 +77,13 @@ Linking ./.build/debug/Kitura-Starter-Bluemix
 
 Once the server starts, you should see the message _Listening on port 8090_ as shown above. Note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter-Bluemix`.
 
-3) Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter-Bluemix app. This page displays static HTML content served from the Kitura-based server application. Explore the `public` folder to see the HTML file and resources in it.
+3) Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter-Bluemix app. This page displays static HTML content served from the Kitura-based server application. You can explore the `public` folder in the repo to see the HTML file and related resources (e.g. images, CSS file)
 
-4) To access a plain text greeting, point your browser to: [http://localhost:8090/hello](http://localhost:8090/hello).
+4) To access a plain text greeting, point your browser to [http://localhost:8090/hello](http://localhost:8090/hello).
 
-5) To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to the following endpoint: [http://localhost:8090/hello](http://localhost:8090/hello). You should get a text response that includes the string you sent to the endpoint.
+5) To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to [http://localhost:8090/hello](http://localhost:8090/hello). You should get a text response that includes the string you sent to the endpoint.
 
-6) To receive a JSON payload, point your browser to: [http://localhost:8090/json](http://localhost:8090/json).
+6) To receive a JSON payload, point your browser to [http://localhost:8090/json](http://localhost:8090/json).
 
 ## Pushing the application to Bluemix
 ### Using the Deploy to Bluemix button
@@ -94,12 +94,12 @@ Clicking on the button below deploys this starter application to Bluemix. The `m
 -->
 [![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/c42412830c143a76568abe1fb2c0b3ea/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git)
 
-Once deployment to Bluemix is completed, you can access the route assigned to your application using the web browser of your choice. You should see the welcome page for the Kitura-Starter-Bluemix app! To access a plain text greeting, point your browser to `http://<application_route>/hello`. To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to `http://<application_route>/hello`. You should get a text response that includes the string you sent to the endpoint. Finally, to receive a JSON payload, point your browser to `http://<application_route>/json`.
+Once deployment to Bluemix is completed, you can access the route assigned to your application using the web browser of your choice. You should then see the welcome page for the Kitura-Starter-Bluemix app! To access a plain text greeting, point your browser to `http://<application_route>/hello`. To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to `http://<application_route>/hello`. You should get a text response that includes the string you sent to the endpoint. Finally, to receive a JSON payload, point your browser to `http://<application_route>/json`.
 
 Note that the [IBM Bluemix buildpack for Swift](https://github.com/IBM-Swift/swift-buildpack) is used for the deployment of this app to Bluemix. This IBM Bluemix buildpack for Swift is currently installed in the following Bluemix regions: US South, United Kingdom, and Sydney.
 
 ### Using the Cloud Foundry command line
-You can also manually deploy the app to Bluemix.  Though not as magical as using the Bluemix button above, manually deploying the app gives you some insights about what is happening behind the scenes.  Remember that you'd need the Cloud Foundry [command line](https://www.ng.bluemix.net/docs/starters/install_cli.html) installed on your system to deploy the app to Bluemix.
+You can also manually deploy the app to Bluemix. Though not as magical as using the Bluemix button above, manually deploying the app gives you some insights about what is happening behind the scenes. Remember that you'd need the Cloud Foundry [command line](https://www.ng.bluemix.net/docs/starters/install_cli.html) installed on your system to deploy the app to Bluemix.
 
 Using the Cloud Foundry command line you can get a list of the buildpacks (along with their versions) that are installed on Bluemix. Note that you should be already logged on to Bluemix before you issue any of the following commands.
 
@@ -263,7 +263,7 @@ buildpack: swift_buildpack
 Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter-Bluemix app. You can log on to your [Bluemix account](https://console.ng.bluemix.net) to find the route of your application or you can inspect the output from the execution of the `cf push` command.  The string value (e.g. kitura-starter-bluemix-unfiducial-flab.eu-gb.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
 
 ## Kitura Wiki
-Feel free to visit our [Wiki](https://github.com/IBM-Swift/Kitura/wiki) for our roadmap and some tutorials.
+Feel free to visit Kitura's [Wiki](https://github.com/IBM-Swift/Kitura/wiki) for our roadmap and tutorials.
 
 ## Privacy Notice
 This Swift application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) service on each deployment:
