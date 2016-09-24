@@ -23,9 +23,8 @@ import CloudFoundryEnv
 import CloudFoundryDeploymentTracker
 
 do {
-  // Using the HeliumLogger implementation for Logger
   // HeliumLogger disables all buffering on stdout
-  Log.logger = HeliumLogger()
+  HeliumLogger.use(LoggerMessageType.verbose)
   let controller = try Controller()
   Log.info("Server will be started on '\(controller.url)'.")
   CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git", codeVersion: nil).track()
