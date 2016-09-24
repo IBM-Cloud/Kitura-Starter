@@ -25,7 +25,6 @@ Once you have installed the Swift compiler and any system level dependencies req
 1. Clone this repo using `git clone https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git` and go to the root folder using `cd Kitura-Starter-Bluemix`.
 
 2. Go to the root folder of this repo on your system and issue the `make run` command to compile and execute the starter app:
-
 ```
 $ make run
 make SWIFT_BUILD_CONFIGURATION="debug" SWIFTC_FLAGS="-Xswiftc -DDEBUG" _build
@@ -74,7 +73,6 @@ Linking ./.build/debug/Kitura-Starter-Bluemix
  VERBOSE: run() Kitura.swift line 73 - Starting an HTTP Server on port 8090...
  INFO: listen(socket:port:) HTTPServer.swift line 128 - Listening on port 8090
 ```
-
 Once the server starts, you should see the message _Listening on port 8090_ as shown above. Note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter-Bluemix`.
 
 3. Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter-Bluemix app. This page displays static HTML content served from the Kitura-based server application. Explore the `public` folder to see the HTML file and resources in it.
