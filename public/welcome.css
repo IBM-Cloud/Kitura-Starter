@@ -45,6 +45,13 @@
     width: 550px;
 }
 
+.version {
+    color: #333333;
+    font-family: HelveticaNeue-Light;
+    font-size: 13px;
+    text-align: center;
+}
+
 .documentContents {
     padding-bottom: 60px; /* Height of footerBar */
 }
