@@ -5,7 +5,7 @@
 [![macOS](https://img.shields.io/badge/os-Mac%20OS%20X-green.svg?style=flat)](http://www.apple.com/macos/)
 [![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)](http://releases.ubuntu.com/14.04/)
 [![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/c42412830c143a76568abe1fb2c0b3ea/badge.svg)](https://deployment-tracker.mybluemix.net/)
+[![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/4a5d51360be115c3929328e7b695e0a9/badge.svg)](https://deployment-tracker.mybluemix.net/)
 
 **Bluemix starter application for Kitura web framework and HTTP server**
 
