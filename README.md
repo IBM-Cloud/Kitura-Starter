@@ -1,6 +1,6 @@
 ![Kitura](https://raw.githubusercontent.com/IBM-Swift/Kitura/master/Documentation/KituraLogo.png)
 
-[![Build Status - Master](https://travis-ci.org/IBM-Swift/Kitura-Starter-Bluemix.svg?branch=master)](https://travis-ci.org/IBM-Swift/Kitura-Starter-Bluemix)
+[![Build Status - Master](https://travis-ci.org/IBM-Swift/Kitura-Starter.svg?branch=master)](https://travis-ci.org/IBM-Swift/Kitura-Starter)
 [![Join the chat at https://gitter.im/IBM-Swift/Kitura](https://badges.gitter.im/IBM-Swift/Kitura.svg)](https://gitter.im/IBM-Swift/Kitura?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![macOS](https://img.shields.io/badge/os-Mac%20OS%20X-green.svg?style=flat)](http://www.apple.com/macos/)
 [![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)](http://releases.ubuntu.com/14.04/)
@@ -12,11 +12,11 @@
 ## What is Kitura?
 [Kitura](https://github.com/IBM-Swift/Kitura) is a new, modular, package-based web framework written in the Swift language, that allows you to build web services with complex routes, easily.
 
-## Kitura-Starter-Bluemix Overview
-Kitura-Starter-Bluemix is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on Bluemix. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 14.04](http://www.ubuntu.com/download) system.
+## Kitura-Starter Overview
+Kitura-Starter is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on Bluemix. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 14.04](http://www.ubuntu.com/download) system.
 
 ## Application Requirements
-To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter-Bluemix works with the Swift `3.0` release binaries. Compatibility with other Swift versions is not guaranteed.
+To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `3.0` release binaries. Compatibility with other Swift versions is not guaranteed.
 
 For further details on executing Kitura-based applications locally, please see Kitura's instructions for installation on [macOS ](https://github.com/IBM-Swift/Kitura#installation-os-x) and on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) since system level dependencies may be required before attempting to execute this starter app.
 
@@ -25,7 +25,7 @@ If you are interested in manually deploying the application to Bluemix, you'll n
 ## Clone, build, and run locally
 Once you have installed the Swift compiler and any system level dependencies required by the Kitura framework, you can proceed with the steps described in this section.
 
-1) Clone this repo using `git clone https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git`.
+1) Clone this repo using `git clone https://github.com/IBM-Swift/Kitura-Starter.git`.
 
 2) Go to the root folder of this repo on your system and issue the `make run` command to compile and execute the starter app:
 
@@ -66,9 +66,9 @@ Compile Swift Module 'KituraNet' (29 sources)
 Compile Swift Module 'CloudFoundryDeploymentTracker' (1 sources)
 Compile Swift Module 'Kitura' (40 sources)
 Compile Swift Module 'Kitura_Starter_Bluemix' (2 sources)
-Linking ./.build/debug/Kitura-Starter-Bluemix
---- Invoking Kitura-Starter-Bluemix executable
-./.build/debug/Kitura-Starter-Bluemix
+Linking ./.build/debug/Kitura-Starter
+--- Invoking Kitura-Starter executable
+./.build/debug/Kitura-Starter
  VERBOSE: init() Router.swift line 55 - Router initialized
  INFO: Kitura_Starter_Bluemix main.swift line 30 - Server will be started on 'http://localhost:8090'.
  WARNING: buildTrackerJson(appEnv:) DeploymentTracker.swift line 103 - Couldn't get Cloud Foundry App instance.
@@ -78,9 +78,9 @@ Linking ./.build/debug/Kitura-Starter-Bluemix
  INFO: listen(socket:port:) HTTPServer.swift line 128 - Listening on port 8090
 ```
 
-Once the server starts, you should see the message _Listening on port 8090_ as shown above. Note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter-Bluemix`.
+Once the server starts, you should see the message _Listening on port 8090_ as shown above. Note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter`.
 
-3) Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter-Bluemix app. This page displays static HTML content served from the Kitura-based server application. You can explore the `public` folder in the repo to see the HTML file and related resources (e.g. images, CSS file)
+3) Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter app. This page displays static HTML content served from the Kitura-based server application. You can explore the `public` folder in the repo to see the HTML file and related resources (e.g. images, CSS file)
 
 4) To access a plain text greeting, point your browser to [http://localhost:8090/hello](http://localhost:8090/hello).
 
@@ -95,9 +95,9 @@ Clicking on the button below deploys this starter application to Bluemix. The `m
 <!---
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
 -->
-[![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/c42412830c143a76568abe1fb2c0b3ea/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git)
+[![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/c42412830c143a76568abe1fb2c0b3ea/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Swift/Kitura-Starter.git)
 
-Once deployment to Bluemix is completed, you can access the route assigned to your application using the web browser of your choice. You should then see the welcome page for the Kitura-Starter-Bluemix app! To access a plain text greeting, point your browser to `http://<application_route>/hello`. To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to `http://<application_route>/hello`. You should get a text response that includes the string you sent to the endpoint. Finally, to receive a JSON payload, point your browser to `http://<application_route>/json`.
+Once deployment to Bluemix is completed, you can access the route assigned to your application using the web browser of your choice. You should then see the welcome page for the Kitura-Starter app! To access a plain text greeting, point your browser to `http://<application_route>/hello`. To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to `http://<application_route>/hello`. You should get a text response that includes the string you sent to the endpoint. Finally, to receive a JSON payload, point your browser to `http://<application_route>/json`.
 
 Note that the [IBM Bluemix buildpack for Swift](https://github.com/IBM-Swift/swift-buildpack) is used for the deployment of this app to Bluemix. This IBM Bluemix buildpack for Swift is currently installed in the following Bluemix regions: US South, United Kingdom, and Sydney.
 
@@ -140,24 +140,24 @@ After you have cloned this Git repo, go to its root folder on your system and is
 
 ```
 $ cf push
-Using manifest file /Users/olivieri/git/Kitura-Starter-Bluemix/manifest.yml
+Using manifest file /Users/olivieri/git/Kitura-Starter/manifest.yml
 
-Creating app Kitura-Starter-Bluemix in org roliv@us.ibm.com / space dev as roliv@us.ibm.com...
+Creating app Kitura-Starter in org roliv@us.ibm.com / space dev as roliv@us.ibm.com...
 OK
 
-Creating route kitura-starter-bluemix-unfiducial-flab.eu-gb.mybluemix.net...
+Creating route Kitura-Starter-unfiducial-flab.eu-gb.mybluemix.net...
 OK
 
-Binding kitura-starter-bluemix-unfiducial-flab.eu-gb.mybluemix.net to Kitura-Starter-Bluemix...
+Binding Kitura-Starter-unfiducial-flab.eu-gb.mybluemix.net to Kitura-Starter...
 OK
 
-Uploading Kitura-Starter-Bluemix...
-Uploading app files from: /Users/olivieri/git/Kitura-Starter-Bluemix
+Uploading Kitura-Starter...
+Uploading app files from: /Users/olivieri/git/Kitura-Starter
 Uploading 110.4K, 60 files
 Done uploading               
 OK
 
-Starting app Kitura-Starter-Bluemix in org roliv@us.ibm.com / space dev as roliv@us.ibm.com...
+Starting app Kitura-Starter in org roliv@us.ibm.com / space dev as roliv@us.ibm.com...
 -----> Downloaded app package (56K)
 -----> Default supported Swift version is 3.0
 -----> Installing system level dependencies...
@@ -233,7 +233,7 @@ Starting app Kitura-Starter-Bluemix in org roliv@us.ibm.com / space dev as roliv
        Compile Swift Module 'CloudFoundryDeploymentTracker' (1 sources)
        Compile Swift Module 'Kitura' (40 sources)
        Compile Swift Module 'Kitura_Starter_Bluemix' (2 sources)
-       Linking ./.build/release/Kitura-Starter-Bluemix
+       Linking ./.build/release/Kitura-Starter
 -----> Copying dynamic libraries
 -----> Copying binaries to 'bin'
 -----> Cleaning up build files
@@ -248,13 +248,13 @@ App started
 
 OK
 
-App Kitura-Starter-Bluemix was started using this command `Kitura-Starter-Bluemix`
+App Kitura-Starter was started using this command `Kitura-Starter`
 OK
 
 requested state: started
 instances: 1/1
 usage: 256M x 1 instances
-urls: kitura-starter-bluemix-unfiducial-flab.eu-gb.mybluemix.net
+urls: Kitura-Starter-unfiducial-flab.eu-gb.mybluemix.net
 last uploaded: Sat Sep 24 00:11:48 UTC 2016
 stack: cflinuxfs2
 buildpack: swift_buildpack
@@ -263,7 +263,7 @@ buildpack: swift_buildpack
 #0   running   2016-09-23 08:14:40 PM   0.0%   18.9M of 256M   59M of 1G
 ```
 
-Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter-Bluemix app. You can log on to your [Bluemix account](https://console.ng.bluemix.net) to find the route of your application or you can inspect the output from the execution of the `cf push` command.  The string value (e.g. kitura-starter-bluemix-unfiducial-flab.eu-gb.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
+Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter app. You can log on to your [Bluemix account](https://console.ng.bluemix.net) to find the route of your application or you can inspect the output from the execution of the `cf push` command.  The string value (e.g. Kitura-Starter-unfiducial-flab.eu-gb.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
 
 ## Kitura Wiki
 Feel free to visit Kitura's [Wiki](https://github.com/IBM-Swift/Kitura/wiki) for our roadmap and tutorials.
@@ -285,7 +285,7 @@ This data is collected from the parameters of the `CloudFoundryDeploymentTracker
 ### Disabling Deployment Tracking
 Deployment tracking can be disabled by removing the following line from `main.swift`:
 
-    CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git", codeVersion: nil).track()
+    CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter.git", codeVersion: nil).track()
 
 ## License
-The Kitura-Starter-Bluemix sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
+The Kitura-Starter sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).

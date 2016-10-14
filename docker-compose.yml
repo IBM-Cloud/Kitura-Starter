@@ -3,5 +3,5 @@ app:
   ports:
     - "8090:8090"
   volumes:
-    - .:/root/Kitura-Starter-Bluemix
-  command: bash -c "make clean -C Kitura-Starter-Bluemix && make -C Kitura-Starter-Bluemix && Kitura-Starter-Bluemix/.build/debug/Kitura-Starter-Bluemix"
+    - .:/root/Kitura-Starter
+  command: bash -c "make clean -C Kitura-Starter && make -C Kitura-Starter && Kitura-Starter/.build/debug/Kitura-Starter"

@@ -54,16 +54,16 @@ public class Controller {
   public func getHello(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("GET - /hello route handler...")
     response.headers["Content-Type"] = "text/plain; charset=utf-8"
-    try response.status(.OK).send("Hello from Kitura-Starter-Bluemix!").end()
+    try response.status(.OK).send("Hello from Kitura-Starter!").end()
   }
 
   public func postHello(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("POST - /hello route handler...")
     response.headers["Content-Type"] = "text/plain; charset=utf-8"
     if let name = try request.readString() {
-      try response.status(.OK).send("Hello \(name), from Kitura-Starter-Bluemix!").end()
+      try response.status(.OK).send("Hello \(name), from Kitura-Starter!").end()
     } else {
-      try response.status(.OK).send("Kitura-Starter-Bluemix received a POST request!").end()
+      try response.status(.OK).send("Kitura-Starter received a POST request!").end()
     }
   }
 
@@ -72,7 +72,7 @@ public class Controller {
     response.headers["Content-Type"] = "application/json; charset=utf-8"
     var jsonResponse = JSON([:])
     jsonResponse["framework"].stringValue = "Kitura"
-    jsonResponse["applicationName"].stringValue = "Kitura-Starter-Bluemix"
+    jsonResponse["applicationName"].stringValue = "Kitura-Starter"
     jsonResponse["company"].stringValue = "IBM"
     jsonResponse["organization"].stringValue = "Swift @ IBM"
     jsonResponse["location"].stringValue = "Austin, Texas"

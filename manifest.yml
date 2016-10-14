@@ -1,5 +1,5 @@
 applications:
-- name: Kitura-Starter-Bluemix
+- name: Kitura-Starter
   memory: 256M
   instances: 1
   random-route: true

@@ -14,7 +14,7 @@
 * limitations under the License.
 **/
 
-// Kitura-Starter-Bluemix contains examples for creating custom routes.
+// Kitura-Starter contains examples for creating custom routes.
 import Foundation
 import Kitura
 import LoggerAPI
@@ -27,9 +27,9 @@ do {
   HeliumLogger.use(LoggerMessageType.info)
   let controller = try Controller()
   Log.info("Server will be started on '\(controller.url)'.")
-  CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter-Bluemix.git", codeVersion: nil).track()
+  CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter.git", codeVersion: nil).track()
   Kitura.addHTTPServer(onPort: controller.port, with: controller.router)
-  // Start Kitura-Starter-Bluemix server
+  // Start Kitura-Starter server
   Kitura.run()
 } catch let error {
   Log.error(error.localizedDescription)
