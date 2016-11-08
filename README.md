@@ -134,7 +134,7 @@ liberty-for-java_v3_2-20160822-2200    18         true      false    buildpack_l
 swift_buildpack_v1_1_6-20160729-1205   19         true      false    buildpack_swift_v1.1.6-20160729-1205.zip
 ```
 
-Looking at the output above, we can see that the IBM Bluemix buildpack for Swift (v2.0.0) is installed on Bluemix. This will allow a seamless deployment of the starter application to Bluemix.
+Looking at the output above, we can see that the IBM Bluemix buildpack for Swift is installed on Bluemix. This will allow a seamless deployment of the starter application to Bluemix.
 
 After you have cloned this Git repo, go to its root folder on your system and issue the `cf push` command:
 
