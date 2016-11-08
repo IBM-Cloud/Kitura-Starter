@@ -16,7 +16,7 @@
 Kitura-Starter is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on Bluemix. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 14.04](http://www.ubuntu.com/download) system.
 
 ## Application Requirements
-To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `3.0` release binaries. Compatibility with other Swift versions is not guaranteed.
+To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `3.0.1` release binaries. Compatibility with other Swift versions is not guaranteed.
 
 For further details on executing Kitura-based applications locally, please see Kitura's instructions for installation on [macOS ](https://github.com/IBM-Swift/Kitura#installation-os-x) and on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) since system level dependencies may be required before attempting to execute this starter app.
 
@@ -134,7 +134,7 @@ liberty-for-java_v3_2-20160822-2200    18         true      false    buildpack_l
 swift_buildpack_v1_1_6-20160729-1205   19         true      false    buildpack_swift_v1.1.6-20160729-1205.zip
 ```
 
-Looking at the output above, we can see that the IBM Bluemix buildpack for Swift (v2.0.0) is installed on Bluemix. This will allow a seamless deployment of the starter application to Bluemix.
+Looking at the output above, we can see that the IBM Bluemix buildpack for Swift is installed on Bluemix. This will allow a seamless deployment of the starter application to Bluemix.
 
 After you have cloned this Git repo, go to its root folder on your system and issue the `cf push` command:
 
@@ -285,7 +285,7 @@ This data is collected from the parameters of the `CloudFoundryDeploymentTracker
 ### Disabling Deployment Tracking
 Deployment tracking can be disabled by removing the following line from `main.swift`:
 
-    CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter.git", codeVersion: nil).track()
+    CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Bluemix/Kitura-Starter.git", codeVersion: nil).track()
 
 ## License
 The Kitura-Starter sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
