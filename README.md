@@ -285,7 +285,7 @@ This data is collected from the parameters of the `CloudFoundryDeploymentTracker
 ### Disabling Deployment Tracking
 Deployment tracking can be disabled by removing the following line from `main.swift`:
 
-    CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Swift/Kitura-Starter.git", codeVersion: nil).track()
+    CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Bluemix/Kitura-Starter", codeVersion: nil).track()
 
 ## License
 The Kitura-Starter sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
