@@ -25,7 +25,7 @@ If you are interested in manually deploying the application to Bluemix, you'll n
 ## Clone, build, and run locally
 Once you have installed the Swift compiler and any system level dependencies required by the Kitura framework, you can proceed with the steps described in this section.
 
-1) Clone this repo using `git clone https://github.com/IBM-Swift/Kitura-Starter.git`.
+1) Clone this repo using `git clone https://github.com/IBM-Bluemix/Kitura-Starter.git`.
 
 2) Go to the root folder of this repo on your system and issue the `make run` command to compile and execute the starter app:
 
