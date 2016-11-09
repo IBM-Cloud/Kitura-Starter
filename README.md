@@ -5,7 +5,7 @@
 [![macOS](https://img.shields.io/badge/os-Mac%20OS%20X-green.svg?style=flat)](http://www.apple.com/macos/)
 [![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)](http://releases.ubuntu.com/14.04/)
 [![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/4a5d51360be115c3929328e7b695e0a9/badge.svg)](https://deployment-tracker.mybluemix.net/)
+[![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/f3517b364e8ee44775acaf9cece55f6c/badge.svg)](https://deployment-tracker.mybluemix.net/)
 
 **Bluemix starter application for Kitura web framework and HTTP server**
 
@@ -95,7 +95,7 @@ Clicking on the button below deploys this starter application to Bluemix. The `m
 <!---
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
 -->
-[![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/4a5d51360be115c3929328e7b695e0a9/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/Kitura-Starter.git)
+[![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/f3517b364e8ee44775acaf9cece55f6c/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/Kitura-Starter.git)
 
 Once deployment to Bluemix is completed, you can access the route assigned to your application using the web browser of your choice. You should then see the welcome page for the Kitura-Starter app! To access a plain text greeting, point your browser to `http://<application_route>/hello`. To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to `http://<application_route>/hello`. You should get a text response that includes the string you sent to the endpoint. Finally, to receive a JSON payload, point your browser to `http://<application_route>/json`.
 
