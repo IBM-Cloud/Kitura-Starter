@@ -46,9 +46,8 @@ Compile Swift Module 'CloudFoundryDeploymentTracker' (1 sources)
 Compile Swift Module 'Kitura' (41 sources)
 Compile Swift Module 'Kitura_Starter' (2 sources)
 Linking ./.build/debug/Kitura-Starter
+
 $ ./.build/debug/Kitura-Starter
---- Invoking Kitura-Starter executable
-./.build/debug/Kitura-Starter
  INFO: Kitura_Starter main.swift line 29 - Server will be started on 'http://localhost:8090'. 
  INFO: listen(on:) HTTPServer.swift line 73 - Listening on port 8090 
 ```
