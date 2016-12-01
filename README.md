@@ -27,55 +27,29 @@ Once you have installed the Swift compiler and any system level dependencies req
 
 1) Clone this repo using `git clone https://github.com/IBM-Bluemix/Kitura-Starter.git`.
 
-2) Go to the root folder of this repo on your system and issue the `make run` command to compile and execute the starter app:
+2) Go to the root folder of this repo on your system and issue the `swift build` command to compile and execute the starter app:
 
 ```
-$ make run
-make SWIFT_BUILD_CONFIGURATION="debug" SWIFTC_FLAGS="-Xswiftc -DDEBUG" _build
---- Running build on Darwin
---- Build scripts directory: Package-Builder/build
---- Checking swift version
-swift --version
-Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)
-Target: x86_64-apple-macosx10.9
---- Checking swiftc version
-swiftc --version
-Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)
-Target: x86_64-apple-macosx10.9
---- Checking git version
-git --version
-git version 2.8.4 (Apple Git-73)
---- Checking git revision and branch
-git rev-parse HEAD
-33ba1650a8661cc34a63ebb62991aa1cf96f6c0c
-git rev-parse --abbrev-ref HEAD
-develop
---- Invoking swift build
-swift build -c debug -Xswiftc -DDEBUG  
-Compile CHTTPParser utils.c
-Compile CHTTPParser http_parser.c
+$ swift build
 Compile Swift Module 'Socket' (3 sources)
-Compile Swift Module 'LoggerAPI' (1 sources)
 Compile Swift Module 'SwiftyJSON' (2 sources)
+Compile Swift Module 'LoggerAPI' (1 sources)
 Compile Swift Module 'KituraTemplateEngine' (1 sources)
 Compile Swift Module 'HeliumLogger' (1 sources)
-Linking CHTTPParser
 Compile Swift Module 'SSLService' (1 sources)
 Compile Swift Module 'CloudFoundryEnv' (7 sources)
-Compile Swift Module 'KituraNet' (29 sources)
+Compile CHTTPParser utils.c
+Compile CHTTPParser http_parser.c
+Linking CHTTPParser
+Compile Swift Module 'KituraNet' (34 sources)
 Compile Swift Module 'CloudFoundryDeploymentTracker' (1 sources)
-Compile Swift Module 'Kitura' (40 sources)
-Compile Swift Module 'Kitura_Starter_Bluemix' (2 sources)
+Compile Swift Module 'Kitura' (41 sources)
+Compile Swift Module 'Kitura_Starter' (2 sources)
 Linking ./.build/debug/Kitura-Starter
---- Invoking Kitura-Starter executable
-./.build/debug/Kitura-Starter
- VERBOSE: init() Router.swift line 55 - Router initialized
- INFO: Kitura_Starter_Bluemix main.swift line 30 - Server will be started on 'http://localhost:8090'.
- WARNING: buildTrackerJson(appEnv:) DeploymentTracker.swift line 103 - Couldn't get Cloud Foundry App instance.
- WARNING: track() DeploymentTracker.swift line 88 - Failed to build valid JSON for deployment tracker.
- VERBOSE: run() Kitura.swift line 71 - Starting Kitura framework...
- VERBOSE: run() Kitura.swift line 73 - Starting an HTTP Server on port 8090...
- INFO: listen(socket:port:) HTTPServer.swift line 128 - Listening on port 8090
+
+$ ./.build/debug/Kitura-Starter
+ INFO: Kitura_Starter main.swift line 29 - Server will be started on 'http://localhost:8090'. 
+ INFO: listen(on:) HTTPServer.swift line 73 - Listening on port 8090 
 ```
 
 Once the server starts, you should see the message _Listening on port 8090_ as shown above. Note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter`.
