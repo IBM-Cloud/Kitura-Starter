@@ -48,7 +48,7 @@ Compile Swift Module 'Kitura_Starter' (2 sources)
 Linking ./.build/debug/Kitura-Starter
 ```
 
-Once the application is compiled, you can start the server (note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter`).
+Once the application is compiled, you can start the server (note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter`):
 
 ```
 $ ./.build/debug/Kitura-Starter
