@@ -27,7 +27,7 @@ Once you have installed the Swift compiler and any system level dependencies req
 
 1) Clone this repo using `git clone https://github.com/IBM-Bluemix/Kitura-Starter.git`.
 
-2) Go to the root folder of this repo on your system and issue the `swift build` command to compile and execute the starter app:
+2) Go to the root folder of this repo on your system and issue the `swift build` command to compile the application:
 
 ```
 $ swift build
@@ -46,13 +46,17 @@ Compile Swift Module 'CloudFoundryDeploymentTracker' (1 sources)
 Compile Swift Module 'Kitura' (41 sources)
 Compile Swift Module 'Kitura_Starter' (2 sources)
 Linking ./.build/debug/Kitura-Starter
+```
 
+Once the application is compiled, you can start the server (note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter`).
+
+```
 $ ./.build/debug/Kitura-Starter
  INFO: Kitura_Starter main.swift line 29 - Server will be started on 'http://localhost:8090'. 
  INFO: listen(on:) HTTPServer.swift line 73 - Listening on port 8090 
 ```
 
-Once the server starts, you should see the message _Listening on port 8090_ as shown above. Note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter`.
+Once the server starts, you should see the message _Listening on port 8090_ as shown above.
 
 3) Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter app. This page displays static HTML content served from the Kitura-based server application. You can explore the `public` folder in the repo to see the HTML file and related resources (e.g. images, CSS file)
 
