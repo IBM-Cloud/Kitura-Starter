@@ -4,4 +4,4 @@ app:
     - "8090:8090"
   volumes:
     - .:/root/Kitura-Starter
-  command: bash -c "make clean -C Kitura-Starter && make -C Kitura-Starter && Kitura-Starter/.build/debug/Kitura-Starter"
+  command: bash -c "cd /root/Kitura-Starter && swift build --clean && swift build && ./.build/debug/Kitura-Starter"
