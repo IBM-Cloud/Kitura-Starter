@@ -18,7 +18,7 @@
 set -ev
 
 if [ "$TRAVIS_BRANCH" == "master" ]; then
-	echo "Pushing image to docker.";
+	echo "Pushing ibmcom/kitura-ubuntu image to Docker Hub.";
 	docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD";
 	docker push ibmcom/kitura-ubuntu:latest;
 fi
