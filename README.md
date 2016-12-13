@@ -264,6 +264,9 @@ This data is collected from the parameters of the `CloudFoundryDeploymentTracker
 Deployment tracking can be disabled by removing the following line from `main.swift`:
 
     CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Bluemix/Kitura-Starter.git", codeVersion: nil).track()
+    
+## Running the application in an IBM Container on Bluemix
+This starter application can also be run in an IBM Container in Bluemix. The `ibmcom/kitura-ubuntu` Docker image extends the [swift-ubuntu-docker](https://github.com/IBM-Swift/swift-ubuntu-docker) image. Hence, the `ibmcom/kitura-ubuntu` image also uses Ubuntu v14.04 LTS. For details on how to create an IBM Container to execute a Swift application, please see [10 Steps To Running a Swift App in an IBM Container] (https://developer.ibm.com/swift/2016/02/22/10-steps-to-running-a-swift-app-in-an-ibm-container) and [Running Kitura in an IBM Container](https://developer.ibm.com/swift/2016/03/04/running-kitura-in-an-ibm-container/).
 
 ## License
-The Kitura-Starter sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
+The Kitura-Starter sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE).
