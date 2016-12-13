@@ -30,3 +30,8 @@ before_install:
 
 script:
   - ./Package-Builder/build-package.sh -projectDir $TRAVIS_BUILD_DIR
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+      docker build --pull -t ibmcom/kitura-ubuntu:latest .;
+      ./ci/push_docker_image.sh;
+    fi
+
