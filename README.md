@@ -266,4 +266,4 @@ Deployment tracking can be disabled by removing the following line from `main.sw
     CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Bluemix/Kitura-Starter.git", codeVersion: nil).track()
 
 ## License
-The Kitura-Starter sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
+The Kitura-Starter sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE).
