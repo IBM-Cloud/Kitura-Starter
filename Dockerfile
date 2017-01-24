@@ -33,4 +33,5 @@ ADD .swift-version /root/Kitura-Starter
 RUN cd /root/Kitura-Starter && swift build
 
 USER root
-CMD ["/root/Kitura-Starter/.build/debug/Kitura-Starter"]
+#CMD ["/root/Kitura-Starter/.build/debug/Kitura-Starter"]
+CMD [ "sh", "-c", "cd /root/Kitura-Starter && .build/debug/Kitura-Starter" ]
