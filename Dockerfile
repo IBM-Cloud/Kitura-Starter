@@ -21,7 +21,7 @@ MAINTAINER IBM Swift Engineering at IBM Cloud
 LABEL Description="Docker image for building and running the Kitura-Starter sample application."
 
 # Expose default port for Kitura
-EXPOSE 8090
+EXPOSE 8080
 
 RUN mkdir /root/Kitura-Starter
 
