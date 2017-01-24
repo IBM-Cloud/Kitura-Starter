@@ -52,19 +52,19 @@ Once the application is compiled, you can start the server (note that the execut
 
 ```
 $ ./.build/debug/Kitura-Starter
- INFO: Kitura_Starter main.swift line 29 - Server will be started on 'http://localhost:8090'. 
- INFO: listen(on:) HTTPServer.swift line 73 - Listening on port 8090 
+ INFO: Kitura_Starter main.swift line 29 - Server will be started on 'http://localhost:8080'. 
+ INFO: listen(on:) HTTPServer.swift line 73 - Listening on port 8080 
 ```
 
-Once the server starts, you should see the message _Listening on port 8090_ as shown above.
+Once the server starts, you should see the message _Listening on port 8080_ as shown above.
 
-3) Open your browser at [http://localhost:8090](http://localhost:8090) to access the welcome page for the Kitura-Starter app. This page displays static HTML content served from the Kitura-based server application. You can explore the `public` folder in the repo to see the HTML file and related resources (e.g. images, CSS file)
+3) Open your browser at [http://localhost:8080](http://localhost:8080) to access the welcome page for the Kitura-Starter app. This page displays static HTML content served from the Kitura-based server application. You can explore the `public` folder in the repo to see the HTML file and related resources (e.g. images, CSS file)
 
-4) To access a plain text greeting, point your browser to [http://localhost:8090/hello](http://localhost:8090/hello).
+4) To access a plain text greeting, point your browser to [http://localhost:8080/hello](http://localhost:8080/hello).
 
-5) To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to [http://localhost:8090/hello](http://localhost:8090/hello). You should get a text response that includes the string you sent to the endpoint.
+5) To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to [http://localhost:8080/hello](http://localhost:8080/hello). You should get a text response that includes the string you sent to the endpoint.
 
-6) To receive a JSON payload, point your browser to [http://localhost:8090/json](http://localhost:8090/json).
+6) To receive a JSON payload, point your browser to [http://localhost:8080/json](http://localhost:8080/json).
 
 ## Pushing the application to Bluemix
 ### Using the Deploy to Bluemix button
