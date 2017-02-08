@@ -23,7 +23,7 @@ public class Controller {
 
   let router: Router
   let appEnv: AppEnv
-  var endpointsEnabled: Bool = true
+  var JSONEndpointEnabled: Bool = true
 
   var port: Int {
     get { return appEnv.port }
@@ -52,36 +52,28 @@ public class Controller {
     router.get("/json", handler: getJSON)
     
     // Enable/disable endpoints (for Swift Enterprise Demo)
-    router.post("/enable", handler: enableEndpoints)
+    router.get("/jsonEndpoint/:activation", handler: enableEndpoints)
   }
 
   public func getHello(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("GET - /hello route handler...")
-    if self.endpointsEnabled {
-      response.headers["Content-Type"] = "text/plain; charset=utf-8"
-      try response.status(.OK).send("Hello from Kitura-Starter!").end()
-    } else {
-      next()
-    }
+    response.headers["Content-Type"] = "text/plain; charset=utf-8"
+    try response.status(.OK).send("Hello from Kitura-Starter!").end()
   }
 
   public func postHello(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("POST - /hello route handler...")
-    if self.endpointsEnabled {
-      response.headers["Content-Type"] = "text/plain; charset=utf-8"
-      if let name = try request.readString() {
-        try response.status(.OK).send("Hello \(name), from Kitura-Starter!").end()
-      } else {
-        try response.status(.OK).send("Kitura-Starter received a POST request!").end()
-      }
+    response.headers["Content-Type"] = "text/plain; charset=utf-8"
+    if let name = try request.readString() {
+      try response.status(.OK).send("Hello \(name), from Kitura-Starter!").end()
     } else {
-      next()
+      try response.status(.OK).send("Kitura-Starter received a POST request!").end()
     }
   }
 
   public func getJSON(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("GET - /json route handler...")
-    if self.endpointsEnabled {
+    if self.JSONEndpointEnabled {
       response.headers["Content-Type"] = "application/json; charset=utf-8"
       var jsonResponse = JSON([:])
       jsonResponse["framework"].stringValue = "Kitura"
@@ -98,14 +90,16 @@ public class Controller {
   public func enableEndpoints(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("POST - /enable route handler...")
     response.headers["Content-Type"] = "text/plain; charset=utf-8"
-    if let boolVal = try request.readString() {
-      if boolVal == "true" {
-        self.endpointsEnabled = true
-        try response.status(.OK).send("Endpoints enabled!").end()
+    if let activation = request.parameters["activation"] {
+      if activation == "activate" {
+        self.JSONEndpointEnabled = true
+        try response.status(.OK).send("JSON endpoint enabled!").end()
+      } else if activation == "deactivate" {
+        self.JSONEndpointEnabled = false
+        try response.status(.OK).send("JSON endpoint disabled!").end()
       } else {
-        self.endpointsEnabled = false
-        try response.status(.OK).send("Endpoints disabled!").end()
-      }
+        try response.status(.badRequest).send("Bad request value. Use /jsonEndpoint/activate or jsonEndpoint/deactivate.").end()
+        }
     } else {
       try response.status(.OK).send("Kitura-Starter received a POST request!").end()
     }
