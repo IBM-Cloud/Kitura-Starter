@@ -52,8 +52,8 @@ Once the application is compiled, you can start the server (note that the execut
 
 ```
 $ ./.build/debug/Kitura-Starter
- INFO: Kitura_Starter main.swift line 29 - Server will be started on 'http://localhost:8080'. 
- INFO: listen(on:) HTTPServer.swift line 73 - Listening on port 8080 
+ INFO: Kitura_Starter main.swift line 29 - Server will be started on 'http://localhost:8080'.
+ INFO: listen(on:) HTTPServer.swift line 73 - Listening on port 8080
 ```
 
 Once the server starts, you should see the message _Listening on port 8080_ as shown above.
@@ -65,6 +65,17 @@ Once the server starts, you should see the message _Listening on port 8080_ as s
 5) To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to [http://localhost:8080/hello](http://localhost:8080/hello). You should get a text response that includes the string you sent to the endpoint.
 
 6) To receive a JSON payload, point your browser to [http://localhost:8080/json](http://localhost:8080/json).
+
+7) To manage the `/json` endpoint, send a `POST` operation using your preferred REST client to `/jsonEndpointManager`. A `POST` request to this endpoint should have a JSON payload of the following form:
+
+```
+{
+  enabled: <Boolean>,
+  delay: <Number>
+}
+```
+
+The `enabled` field is a boolean that states whether the `json` endpoint should be enabled or disabled, while the `delay` field specifies the number of seconds the response from the `'json` endpoint should be delayed on the server.
 
 ## Pushing the application to Bluemix
 ### Using the Deploy to Bluemix button
@@ -264,7 +275,7 @@ This data is collected from the parameters of the `CloudFoundryDeploymentTracker
 Deployment tracking can be disabled by removing the following line from `main.swift`:
 
     CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Bluemix/Kitura-Starter.git", codeVersion: nil).track()
-    
+
 ## Running the application in an IBM Container on Bluemix
 This starter application can also be run in an IBM Container in Bluemix. The `ibmcom/kitura-ubuntu` Docker image extends the [swift-ubuntu-docker](https://github.com/IBM-Swift/swift-ubuntu-docker) image. Hence, the `ibmcom/kitura-ubuntu` image also uses Ubuntu v14.04 LTS. For details on how to create an IBM Container to execute a Swift application, please see [10 Steps To Running a Swift App in an IBM Container] (https://developer.ibm.com/swift/2016/02/22/10-steps-to-running-a-swift-app-in-an-ibm-container) and [Running Kitura in an IBM Container](https://developer.ibm.com/swift/2016/03/04/running-kitura-in-an-ibm-container/).
 
