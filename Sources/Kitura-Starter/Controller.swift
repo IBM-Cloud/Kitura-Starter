@@ -18,25 +18,27 @@ import Foundation
 import Kitura
 import SwiftyJSON
 import LoggerAPI
+import Configuration
 import CloudFoundryEnv
+import CloudFoundryConfig
 
 public class Controller {
 
   let router: Router
-  let appEnv: AppEnv
+  let appEnv: ConfigurationManager
   var jsonEndpointEnabled: Bool = true
   var jsonEndpointDelay: UInt32 = 0
 
   var port: Int {
-    get { return appEnv.port }
+    get { return appEnv["port"] }
   }
 
   var url: String {
-    get { return appEnv.url }
+    get { return appEnv["url"] }
   }
 
   init() throws {
-    appEnv = try CloudFoundryEnv.getAppEnv()
+    appEnv = ConfigurationManager()
 
     // All web apps need a Router instance to define routes
     router = Router()
