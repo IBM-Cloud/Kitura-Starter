@@ -25,20 +25,21 @@ import CloudFoundryConfig
 public class Controller {
 
   let router: Router
-  let appEnv: ConfigurationManager
+  let configMgr: ConfigurationManager
   var jsonEndpointEnabled: Bool = true
   var jsonEndpointDelay: UInt32 = 0
 
   var port: Int {
-    get { return appEnv["port"] }
+    get { return configMgr.port }
   }
 
   var url: String {
-    get { return appEnv["url"] }
+    get { return configMgr.url }
   }
 
   init() throws {
-    appEnv = ConfigurationManager()
+    configMgr = ConfigurationManager()
+    configMgr.load(.environmentVariables)
 
     // All web apps need a Router instance to define routes
     router = Router()
