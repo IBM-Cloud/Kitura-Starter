@@ -38,8 +38,7 @@ public class Controller {
   }
 
   init() throws {
-    configMgr = ConfigurationManager()
-    configMgr.load(.environmentVariables)
+    configMgr = ConfigurationManager().load(.environmentVariables)
 
     // All web apps need a Router instance to define routes
     router = Router()
