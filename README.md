@@ -1,6 +1,6 @@
 ![Kitura](https://raw.githubusercontent.com/IBM-Swift/Kitura/master/Documentation/KituraLogo.png)
 
-[![Build Status - Develop](https://travis-ci.org/IBM-Bluemix/Kitura-Starter.svg?branch=develop)](https://travis-ci.org/IBM-Bluemix/Kitura-Starter)
+[![Build Status - Master](https://travis-ci.org/IBM-Bluemix/Kitura-Starter.svg?branch=master)](https://travis-ci.org/IBM-Bluemix/Kitura-Starter)
 [![Join the chat at https://gitter.im/IBM-Swift/Kitura](https://badges.gitter.im/IBM-Swift/Kitura.svg)](https://gitter.im/IBM-Swift/Kitura?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![macOS](https://img.shields.io/badge/os-Mac%20OS%20X-green.svg?style=flat)](http://www.apple.com/macos/)
 [![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)](http://releases.ubuntu.com/14.04/)
