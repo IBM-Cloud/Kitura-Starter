@@ -30,7 +30,7 @@ ADD Package.swift /root/Kitura-Starter
 ADD LICENSE /root/Kitura-Starter
 ADD .swift-version /root/Kitura-Starter
 
-RUN cd /root/Kitura-Starter && swift build
+RUN cd /root/Kitura-Starter && swift build -Xswiftc -DOPENSSL_TOO_OLD
 
 USER root
 #CMD ["/root/Kitura-Starter/.build/debug/Kitura-Starter"]
