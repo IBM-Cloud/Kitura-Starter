@@ -27,7 +27,7 @@ Once you have installed the Swift compiler and any system level dependencies req
 
 1) Clone this repo using `git clone https://github.com/IBM-Bluemix/Kitura-Starter.git`.
 
-2) Go to the root folder of this repo on your system and issue the `swift build` (for macOS) or `swift build -Xswiftc -DOPENSSL_TOO_OLD` (for Ubuntu 14.04) command to compile the application:
+2) Go to the root folder of this repo on your system and issue the `swift build` command to compile the application:
 
 ```
 $ swift build

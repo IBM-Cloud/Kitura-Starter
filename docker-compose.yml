@@ -4,4 +4,4 @@ app:
     - "8080:8080"
   volumes:
     - .:/root/Kitura-Starter
-  command: bash -c "cd /root/Kitura-Starter && swift build --clean && swift build -Xswiftc -DOPENSSL_TOO_OLD && ./.build/debug/Kitura-Starter"
+  command: bash -c "cd /root/Kitura-Starter && swift build --clean && swift build && ./.build/debug/Kitura-Starter"
