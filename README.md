@@ -134,15 +134,15 @@ Using manifest file /Users/olivieri/git/Kitura-Starter/manifest.yml
 Creating app Kitura-Starter in org roliv@us.ibm.com / space dev as roliv@us.ibm.com...
 OK
 
-Creating route kitura-starter-anticlastic-scandaliser.mybluemix.net...
+Creating route kitura-starter-unsanctified-intervalometer.mybluemix.net...
 OK
 
-Binding kitura-starter-anticlastic-scandaliser.mybluemix.net to Kitura-Starter...
+Binding kitura-starter-unsanctified-intervalometer.mybluemix.net to Kitura-Starter...
 OK
 
 Uploading Kitura-Starter...
 Uploading app files from: /Users/olivieri/git/Kitura-Starter
-Uploading 27.5K, 19 files
+Uploading 28K, 17 files
 Done uploading               
 OK
 
@@ -150,17 +150,16 @@ Starting app Kitura-Starter in org roliv@us.ibm.com / space dev as roliv@us.ibm.
 Downloading swift_buildpack...
 Downloaded swift_buildpack
 Creating container
-Successfully created container
 Downloading app package...
-Downloaded app package (27.3K)
+Downloaded app package (27.7K)
 Staging...
 -----> Buildpack version 2.0.4
 -----> Default supported Swift version is 3.0.2
 -----> Configure for apt-get installs...
 -----> Writing profile script...
 -----> Copying deb files to installation folder...
------> Getting swift-3.0.2
 -----> No Aptfile found.
+-----> Getting swift-3.0.2
        Cached swift-3.0.2
 -----> Unpacking swift-3.0.2.tar.gz
 -----> Getting clang-3.8.0
@@ -169,6 +168,9 @@ Staging...
 -----> .ssh directory and config file not found.
 -----> Skipping cache restore (new swift signature)
 -----> Fetching Swift packages and parsing Package.swift files...
+       Cloning https://github.com/IBM-Swift/Kitura.git
+       HEAD is now at 44914b5 Unify query string parsing for 'RouterRequest' and 'BodyParser' (#1026)
+       Resolved version: 1.6.2
        Cloning https://github.com/IBM-Swift/Kitura-net.git
        HEAD is now at 34176a2 Merge the memory leak fixes into master (#176)
        Resolved version: 1.6.2
@@ -179,8 +181,11 @@ Staging...
        HEAD is now at 32c2dd8 Merge pull request #55 from OhItsShaun/master
        Resolved version: 0.12.33
        Cloning https://github.com/IBM-Swift/CCurl.git
-       HEAD is now at 3af3eaf no message
-       Resolved version: 0.12.25
+       HEAD is now at 3cfb752 Add header callback helper function (#9)
+       Resolved version: 0.2.3
+       Cloning https://github.com/IBM-Swift/BlueSSLService.git
+       HEAD is now at 1082e2e Removed the extraneous check for OS.  Not required.
+       Resolved version: 0.12.26
        Cloning https://github.com/IBM-Swift/OpenSSL.git
        HEAD is now at ae27a1d Update README.md
        Resolved version: 0.3.1
@@ -209,18 +214,21 @@ Staging...
        HEAD is now at 0b41b36 Change load functions to log errors instead of throwing
        Resolved version: 0.2.0
 -----> Additional packages to download: libcurl4-openssl-dev openssl libssl-dev
+-----> Fetching .debs for: libcurl4-openssl-dev openssl libssl-dev
        Ign http://archive.ubuntu.com trusty InRelease
        Get:1 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
        Get:2 http://archive.ubuntu.com trusty-security InRelease [65.9 kB]
-       Get:3 http://archive.ubuntu.com trusty Release.gpg [933 B]
        Get:4 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1,199 kB]
        Get:5 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [517 kB]
        Get:6 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [15.2 kB]
        Get:7 http://archive.ubuntu.com trusty-security/main amd64 Packages [731 kB]
        Get:8 http://archive.ubuntu.com trusty-security/universe amd64 Packages [200 kB]
+       Get:9 http://archive.ubuntu.com trusty-security/multiverse amd64 Packages [4,016 B]
        Get:10 http://archive.ubuntu.com trusty Release [58.5 kB]
        Get:11 http://archive.ubuntu.com trusty/main amd64 Packages [1,743 kB]
        Get:12 http://archive.ubuntu.com trusty/universe amd64 Packages [7,589 kB]
+       Get:13 http://archive.ubuntu.com trusty/multiverse amd64 Packages [169 kB]
+       Fetched 12.4 MB in 23s (520 kB/s)
        Reading package lists...
        Reading package lists...
        Building dependency tree...
@@ -233,14 +241,14 @@ Staging...
        The following packages will be upgraded:
          curl libcurl3 libcurl4-openssl-dev libssl-dev libssl1.0.0 openssl
        6 upgraded, 0 newly installed, 0 to remove and 91 not upgraded.
-       Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libssl-dev amd64 1.0.1f-1ubuntu2.22 [1,074 kB]
+       Need to get 2,391 kB/2,931 kB of archives.
        After this operation, 6,144 B of additional disk space will be used.
+       Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libssl-dev amd64 1.0.1f-1ubuntu2.22 [1,074 kB]
        Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libssl1.0.0 amd64 1.0.1f-1ubuntu2.22 [828 kB]
        Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main openssl amd64 1.0.1f-1ubuntu2.22 [489 kB]
-       Fetched 2,391 kB in 4s (508 kB/s)
------> Downloaded DEB files...
+       Fetched 2,391 kB in 4s (495 kB/s)
+       Download complete and in download only mode
 -----> Skipping installation of App Management (debug)
------> Installing system level dependencies...
 -----> Installing curl_7.35.0-1ubuntu2.10_amd64.deb
 -----> Installing libcurl3_7.35.0-1ubuntu2.10_amd64.deb
 -----> Installing libcurl4-openssl-dev_7.35.0-1ubuntu2.10_amd64.deb
@@ -252,25 +260,24 @@ Staging...
 -----> Installing openssl_1.0.1f-1ubuntu2.21_amd64.deb
 -----> Installing openssl_1.0.1f-1ubuntu2.22_amd64.deb
 -----> Building Package...
------> Using custom swift build options: -Xswiftc -DOPENSSL_TOO_OLD
 -----> Build config: release
        Compile Swift Module 'Socket' (3 sources)
        Compile Swift Module 'LoggerAPI' (1 sources)
-       Compile Swift Module 'KituraTemplateEngine' (1 sources)
        Compile Swift Module 'SwiftyJSON' (2 sources)
+       Compile Swift Module 'Configuration' (7 sources)
+       Compile Swift Module 'HeliumLogger' (2 sources)
        Compile Swift Module 'CloudFoundryEnv' (6 sources)
        Compile Swift Module 'SSLService' (1 sources)
-       Compile CHTTPParser http_parser.c
        Compile CHTTPParser utils.c
-       Linking CHTTPParser
        Compile Swift Module 'AmazonConfig' (1 sources)
        Compile Swift Module 'CloudFoundryConfig' (2 sources)
-       Compile Swift Module 'KituraNet' (34 sources)
+       Compile Swift Module 'HerokuConfig' (1 sources)
        Compile Swift Module 'CloudFoundryDeploymentTracker' (1 sources)
+       Compile Swift Module 'Kitura' (43 sources)
        Compile Swift Module 'Kitura_Starter' (2 sources)
        Linking ./.build/release/Kitura-Starter
 -----> Copying dynamic libraries
------> Copying binaries to 'bin'
+-----> Cleaning up build files
 -----> Clearing previous swift cache
 -----> Saving cache (default):
 -----> - Packages
@@ -278,13 +285,16 @@ Staging...
 No start command specified by buildpack or via Procfile.
 App will not start unless a command is provided at runtime.
 Exit status 0
+Staging complete
 Uploading droplet, build artifacts cache...
 Uploading build artifacts cache...
+Uploading droplet...
 Uploaded build artifacts cache (24.6M)
+Uploaded droplet (91M)
 Uploading complete
 Destroying container
-Successfully destroyed container
 
+0 of 1 instances running, 1 starting
 0 of 1 instances running, 1 starting
 0 of 1 instances running, 1 starting
 1 of 1 instances running
@@ -302,13 +312,13 @@ OK
 requested state: started
 instances: 1/1
 usage: 256M x 1 instances
-urls: kitura-starter-anticlastic-scandaliser.mybluemix.net
-last uploaded: Tue Mar 7 03:42:13 UTC 2017
+urls: kitura-starter-unsanctified-intervalometer.mybluemix.net
+last uploaded: Tue Mar 7 14:53:59 UTC 2017
 stack: cflinuxfs2
 buildpack: swift_buildpack
 
-     state     since                    cpu    memory          disk         details
-#0   running   2017-03-06 09:46:34 PM   0.0%   1016K of 256M   1.3M of 1G
+     state     since                    cpu    memory      disk      details
+#0   running   2017-03-07 08:58:10 AM   0.0%   0 of 256M   0 of 1G
 ```
 
 Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter app. You can log on to your [Bluemix account](https://console.ng.bluemix.net) to find the route of your application or you can inspect the output from the execution of the `cf push` command.  The string value (e.g. Kitura-Starter-unfiducial-flab.eu-gb.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
