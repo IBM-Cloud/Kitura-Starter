@@ -66,17 +66,6 @@ Once the server starts, you should see the message _Listening on port 8080_ as s
 
 6) To receive a JSON payload, point your browser to [http://localhost:8080/json](http://localhost:8080/json).
 
-7) To manage the `/json` endpoint, send a `POST` operation using your preferred REST client to `/jsonEndpointManager`. A `POST` request to this endpoint should have a JSON payload of the following form:
-
-```
-{
-  enabled: <Boolean>,
-  delay: <Number>
-}
-```
-
-The `enabled` field is a boolean that states whether the `json` endpoint should be enabled or disabled, while the `delay` field specifies the number of seconds the response from the `'json` endpoint should be delayed on the server.
-
 ## Pushing the application to Bluemix
 ### Using the Deploy to Bluemix button
 Clicking on the button below deploys this starter application to Bluemix. The `manifest.yml` file [included in the repo] is parsed to obtain the name of the application and configuration details. For further details on the structure of the `manifest.yml` file, see the [Cloud Foundry documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#minimal-manifest).
