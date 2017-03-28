@@ -26,8 +26,6 @@ public class Controller {
 
   let router: Router
   let configMgr: ConfigurationManager
-  var jsonEndpointEnabled: Bool = true
-  var jsonEndpointDelay: UInt32 = 0
 
   var port: Int {
     get { return configMgr.port }
@@ -54,10 +52,6 @@ public class Controller {
 
     // JSON Get request
     router.get("/json", handler: getJSON)
-
-    // Manage /json endpoint
-    router.post("/jsonEndpointManager", middleware: BodyParser())
-    router.post("/jsonEndpointManager", handler: jsonEndpointManager)
   }
 
   /**
@@ -87,40 +81,14 @@ public class Controller {
   */
   public func getJSON(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("GET - /json route handler...")
-    if self.jsonEndpointEnabled {
-      response.headers["Content-Type"] = "application/json; charset=utf-8"
-      var jsonResponse = JSON([:])
-      jsonResponse["framework"].stringValue = "Kitura"
-      jsonResponse["applicationName"].stringValue = "Kitura-Starter"
-      jsonResponse["company"].stringValue = "IBM"
-      jsonResponse["organization"].stringValue = "Swift @ IBM"
-      jsonResponse["location"].stringValue = "Austin, Texas"
-      sleep(self.jsonEndpointDelay)
-      try response.status(.OK).send(json: jsonResponse).end()
-    } else {
-      next()
-    }
-  }
-
-  /**
-  * Handler for managing the /json endpoint.
-  */
-  public func jsonEndpointManager(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
-    Log.debug("POST - /enable route handler...")
-    response.headers["Content-Type"] = "text/plain; charset=utf-8"
-    guard let jsonPayload = request.body?.asJSON else {
-      try response.status(.badRequest).send("JSON payload not provided!").end()
-      return
-    }
-    guard let enabled = jsonPayload["enabled"].bool,
-      let delay = jsonPayload["delay"].int else {
-        try response.status(.badRequest).send("Required fields in JSON payload not found!").end()
-        return
-    }
-
-    self.jsonEndpointEnabled = enabled
-    self.jsonEndpointDelay = UInt32(delay)
-    try response.status(.OK).send("/json endpoint settings updated!").end()
+    response.headers["Content-Type"] = "application/json; charset=utf-8"
+    var jsonResponse = JSON([:])
+    jsonResponse["framework"].stringValue = "Kitura"
+    jsonResponse["applicationName"].stringValue = "Kitura-Starter"
+    jsonResponse["company"].stringValue = "IBM"
+    jsonResponse["organization"].stringValue = "Swift @ IBM"
+    jsonResponse["location"].stringValue = "Austin, Texas"
+    try response.status(.OK).send(json: jsonResponse).end()
   }
 
 }
