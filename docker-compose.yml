@@ -1,7 +1,7 @@
 app:
-  image: ibmcom/swift-ubuntu:3.0.2
+  image: ibmcom/swift-ubuntu:3.1
   ports:
     - "8080:8080"
   volumes:
     - .:/root/Kitura-Starter
-  command: bash -c "cd /root/Kitura-Starter && rm -rf Packages/ && swift build --clean && swift build && ./.build/debug/Kitura-Starter"
+  command: bash -c "cd /root/Kitura-Starter && rm -rf Packages/ && swift package clean && swift build && ./.build/debug/Kitura-Starter"
