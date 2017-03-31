@@ -23,7 +23,7 @@
       "package": "CloudFoundryEnv",
       "reason": null,
       "repositoryURL": "https://github.com/IBM-Swift/Swift-cfenv.git",
-      "version": "4.0.0"
+      "version": "4.0.1"
     },
     {
       "package": "Configuration",
@@ -65,13 +65,13 @@
       "package": "SSLService",
       "reason": null,
       "repositoryURL": "https://github.com/IBM-Swift/BlueSSLService.git",
-      "version": "0.12.30"
+      "version": "0.12.31"
     },
     {
       "package": "Socket",
       "reason": null,
       "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
-      "version": "0.12.41"
+      "version": "0.12.43"
     },
     {
       "package": "SwiftyJSON",
