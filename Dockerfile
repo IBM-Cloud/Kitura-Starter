@@ -28,6 +28,7 @@ RUN mkdir /root/Kitura-Starter
 ADD Sources /root/Kitura-Starter/Sources
 ADD public /root/Kitura-Starter/public
 ADD Package.swift /root/Kitura-Starter
+ADD Package.pins /root/Kitura-Starter
 ADD LICENSE /root/Kitura-Starter
 ADD .swift-version /root/Kitura-Starter
 
