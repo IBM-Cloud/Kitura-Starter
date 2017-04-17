@@ -4,4 +4,4 @@ app:
     - "8080:8080"
   volumes:
     - .:/root/Kitura-Starter
-  command: bash -c "cd /root/Kitura-Starter && rm -rf Packages/ && swift package clean && swift build && ./.build/debug/Kitura-Starter"
+  command: bash -c "cd /root/Kitura-Starter && swift package clean && swift build && ./.build/debug/Kitura-Starter"
