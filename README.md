@@ -20,7 +20,7 @@ To compile and run this starter application on your local system, you need to in
 
 For further details on executing Kitura-based applications locally, please see Kitura's instructions for installation on [macOS ](https://github.com/IBM-Swift/Kitura#installation-os-x) and on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) since system level dependencies may be required before attempting to execute this starter app.
 
-If you are interested in manually deploying the application to Bluemix, you'll need to install the Cloud Foundry [command line](https://docs.cloudfoundry.org/devguide/cf-cli/install-go-cli.html) and Bluemix [command line](http://clis.stage1.ng.bluemix.net/ui/home.html) on your system.  Once it is installed, you can use it to [authenticate and access](https://console.ng.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started) your Bluemix organization(s) and spaces.  You can find further details on how to deploy this sample application to Bluemix in a subsequent section.
+If you are interested in manually deploying the application to Bluemix, you'll need to install the Bluemix [command line](http://clis.ng.bluemix.net/ui/home.html) on your system.  Once it is installed, you can use it to [authenticate and access](https://console.ng.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started) your Bluemix organization(s) and spaces.  You can find further details on how to deploy this sample application to Bluemix in a subsequent section.
 
 ## Clone, build, and run locally
 Once you have installed the Swift compiler and any system level dependencies required by the Kitura framework, you can proceed with the steps described in this section.
@@ -79,10 +79,10 @@ Once deployment to Bluemix is completed, you can access the route assigned to yo
 
 Note that the [IBM Bluemix buildpack for Swift](https://github.com/IBM-Swift/swift-buildpack) is used for the deployment of this app to Bluemix. This IBM Bluemix buildpack for Swift is currently installed in the following Bluemix regions: US South, United Kingdom, and Sydney.
 
-### Using the Cloud Foundry command line
-You can also manually deploy the app to Bluemix. Though not as magical as using the Bluemix button above, manually deploying the app gives you some insights about what is happening behind the scenes. Remember that you'd need the Cloud Foundry [command line](https://www.ng.bluemix.net/docs/starters/install_cli.html) and Bluemix [command line](http://clis.stage1.ng.bluemix.net/ui/home.html) installed on your system to deploy the app to Bluemix.
+### Using the Bluemix command line
+You can also manually deploy the app to Bluemix. Though not as magical as using the Bluemix button above, manually deploying the app gives you some insights about what is happening behind the scenes. Remember that you'd need the Bluemix [command line](http://clis.ng.bluemix.net/ui/home.html) installed on your system to deploy the app to Bluemix.
 
-Using the Bluemix and Cloud Foundry command line you can get a list of the buildpacks (along with their versions) that are installed on Bluemix. Note that you should be already logged on to Bluemix before you issue any of the following commands.
+Using the Bluemix command line you can get a list of the buildpacks (along with their versions) that are installed on Bluemix. Note that you should be already logged on to Bluemix before you issue any of the following commands.
 
 Executing the `bx cf buildpacks` above command should result in output similar to the following:
 
