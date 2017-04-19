@@ -20,7 +20,7 @@ To compile and run this starter application on your local system, you need to in
 
 For further details on executing Kitura-based applications locally, please see Kitura's instructions for installation on [macOS ](https://github.com/IBM-Swift/Kitura#installation-os-x) and on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) since system level dependencies may be required before attempting to execute this starter app.
 
-If you are interested in manually deploying the application to Bluemix, you'll need to install the Cloud Foundry [command line](https://docs.cloudfoundry.org/devguide/cf-cli/install-go-cli.html) on your system.  Once it is installed, you can use it to [authenticate and access](https://www.ng.bluemix.net/docs/starters/install_cli.html) your Bluemix organization(s) and spaces.  You can find further details on how to deploy this sample application to Bluemix in a subsequent section.
+If you are interested in manually deploying the application to Bluemix, you'll need to install the Bluemix [command line](http://clis.ng.bluemix.net/ui/home.html) on your system.  Once it is installed, you can use it to [authenticate and access](https://console.ng.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started) your Bluemix organization(s) and spaces.  You can find further details on how to deploy this sample application to Bluemix in a subsequent section.
 
 ## Clone, build, and run locally
 Once you have installed the Swift compiler and any system level dependencies required by the Kitura framework, you can proceed with the steps described in this section.
@@ -79,15 +79,17 @@ Once deployment to Bluemix is completed, you can access the route assigned to yo
 
 Note that the [IBM Bluemix buildpack for Swift](https://github.com/IBM-Swift/swift-buildpack) is used for the deployment of this app to Bluemix. This IBM Bluemix buildpack for Swift is currently installed in the following Bluemix regions: US South, United Kingdom, and Sydney.
 
-### Using the Cloud Foundry command line
-You can also manually deploy the app to Bluemix. Though not as magical as using the Bluemix button above, manually deploying the app gives you some insights about what is happening behind the scenes. Remember that you'd need the Cloud Foundry [command line](https://www.ng.bluemix.net/docs/starters/install_cli.html) installed on your system to deploy the app to Bluemix.
+### Using the Bluemix command line
+You can also manually deploy the app to Bluemix. Though not as magical as using the Bluemix button above, manually deploying the app gives you some insights about what is happening behind the scenes. Remember that you'd need the Bluemix [command line](http://clis.ng.bluemix.net/ui/home.html) installed on your system to deploy the app to Bluemix.
 
-Using the Cloud Foundry command line you can get a list of the buildpacks (along with their versions) that are installed on Bluemix. Note that you should be already logged on to Bluemix before you issue any of the following commands.
+Using the Bluemix command line you can get a list of the buildpacks (along with their versions) that are installed on Bluemix. Note that you should be already logged on to Bluemix before you issue any of the following commands.
 
-Executing the `cf buildpacks` above command should result in output similar to the following:
+Executing the `bx cf buildpacks` above command should result in output similar to the following:
 
 ```
-$ cf buildpacks
+$ bx cf buildpacks
+Invoking 'cf buildpacks'...
+
 Getting buildpacks...
 
 buildpack                              position   enabled   locked   filename
@@ -115,10 +117,10 @@ swift_buildpack_v2_0_4-20170125-2344    27         true      false    buildpack_
 
 Looking at the output above, we can see that the IBM Bluemix buildpack for Swift is installed on Bluemix. This will allow a seamless deployment of the starter application to Bluemix.
 
-After you have cloned this Git repo, go to its root folder on your system and issue the `cf push` command:
+After you have cloned this Git repo, go to its root folder on your system and issue the `bx app push` command:
 
 ```
-$ cf push
+$ bx app push
 Using manifest file /Users/olivieri/git/Kitura-Starter/manifest.yml
 
 Creating app Kitura-Starter in org roliv@us.ibm.com / space dev as roliv@us.ibm.com...
@@ -277,10 +279,10 @@ buildpack: swift_buildpack
 #0   running   2017-03-07 08:58:10 AM   0.0%   0 of 256M   0 of 1G
 ```
 
-Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter app. You can log on to your [Bluemix account](https://console.ng.bluemix.net) to find the route of your application or you can inspect the output from the execution of the `cf push` command.  The string value (e.g. Kitura-Starter-unfiducial-flab.eu-gb.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
+Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter app. You can log on to your [Bluemix account](https://console.ng.bluemix.net) to find the route of your application or you can inspect the output from the execution of the `bx app push` command.  The string value (e.g. Kitura-Starter-unfiducial-flab.eu-gb.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
 
 ## Kitura Wiki
-Feel free to visit Kitura's [Wiki](https://github.com/IBM-Swift/Kitura/wiki) for our roadmap and tutorials.
+Feel free to visit Kitura's [Wiki](https://github.com/IBM-Swift/Kitura/wiki) and [Kitura.io](http://www.kitura.io/) for our roadmap and tutorials.
 
 ## Privacy Notice
 This Swift application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) service on each deployment:
@@ -302,7 +304,7 @@ Deployment tracking can be disabled by removing the following line from `main.sw
     CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-Bluemix/Kitura-Starter.git", codeVersion: nil).track()
 
 ## Running the application in an IBM Container on Bluemix
-This starter application can also be run in an IBM Container in Bluemix. The `ibmcom/kitura-ubuntu` Docker image extends the [swift-ubuntu-docker](https://github.com/IBM-Swift/swift-ubuntu-docker) image. Hence, the `ibmcom/kitura-ubuntu` image also uses Ubuntu v14.04 LTS. For details on how to create an IBM Container to execute a Swift application, please see [10 Steps To Running a Swift App in an IBM Container] (https://developer.ibm.com/swift/2016/02/22/10-steps-to-running-a-swift-app-in-an-ibm-container) and [Running Kitura in an IBM Container](https://developer.ibm.com/swift/2016/03/04/running-kitura-in-an-ibm-container/).
+This starter application can also be run in an IBM Container in Bluemix. The `ibmcom/kitura-ubuntu` Docker image extends the [swift-ubuntu-docker](https://github.com/IBM-Swift/swift-ubuntu-docker) image. Hence, the `ibmcom/kitura-ubuntu` image also uses Ubuntu v14.04 LTS. For details on how to create an IBM Container to execute a Swift application, please see [10 Steps To Running a Swift App in an IBM Container](https://developer.ibm.com/swift/2016/02/22/10-steps-to-running-a-swift-app-in-an-ibm-container) and [Running Kitura in an IBM Container](https://developer.ibm.com/swift/2016/03/04/running-kitura-in-an-ibm-container/).
 
 ## License
 The Kitura-Starter sample app is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE).
