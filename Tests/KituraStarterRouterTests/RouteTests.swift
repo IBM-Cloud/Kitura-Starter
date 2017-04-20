@@ -43,17 +43,8 @@ class RouteTests: XCTestCase {
             ("testGetHello", testGetHello),
             ("testPostHello", testPostHello),
             ("testGetJSON", testGetJSON)
-
         ]
     }
-
-    /*func fileURL(directoriesUp: Int, path: String) -> URL {
-      let initialPath = #file
-      let components = initialPath.characters.split(separator: "/").map(String.init)
-      let notLastFour = components[0..<components.count - directoriesUp]
-      let directoryPath = "/" + notLastFour.joined(separator: "/") + "/" + path
-      return URL(fileURLWithPath: directoryPath)
-    }*/
 
     override func setUp() {
         super.setUp()
@@ -144,9 +135,6 @@ class RouteTests: XCTestCase {
 
         waitForExpectations(timeout: 10.0, handler: nil)
     }
-
-
-
 }
 
 
