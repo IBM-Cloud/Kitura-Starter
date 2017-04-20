@@ -24,18 +24,18 @@ import CloudFoundryConfig
 
 public class Controller {
 
-  let router: Router
+  public let router: Router
   let configMgr: ConfigurationManager
 
-  var port: Int {
+  public var port: Int {
     get { return configMgr.port }
   }
 
-  var url: String {
+  public var url: String {
     get { return configMgr.url }
   }
 
-  init() throws {
+  public init() throws {
     configMgr = ConfigurationManager().load(.environmentVariables)
 
     // All web apps need a Router instance to define routes
