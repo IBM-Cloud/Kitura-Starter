@@ -29,7 +29,7 @@ import HeliumLogger
 import SwiftyJSON
 
 //import KituraStarterRouter
-@testable import KituraStarterRouter
+@testable import Controller
 
 class RouteTests: XCTestCase {
 

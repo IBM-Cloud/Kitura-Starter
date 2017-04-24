@@ -21,7 +21,7 @@ import LoggerAPI
 import HeliumLogger
 import CloudFoundryDeploymentTracker
 
-import KituraStarterRouter
+import Controller
 
 do {
   // HeliumLogger disables all buffering on stdout

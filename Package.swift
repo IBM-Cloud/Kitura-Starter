@@ -20,8 +20,8 @@ let package = Package(
   name: "Kitura-Starter",
   targets: [
     Target(name: "Kitura-Starter",
-           dependencies: [.Target(name: "KituraStarterRouter")]),
-    Target(name: "KituraStarterRouter")
+           dependencies: [.Target(name: "Controller")]),
+    Target(name: "Controller")
   ],
   dependencies: [
     .Package(url: "https://github.com/IBM-Swift/Kitura.git", majorVersion: 1, minor: 7),
