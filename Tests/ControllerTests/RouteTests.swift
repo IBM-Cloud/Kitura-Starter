@@ -68,12 +68,15 @@ class RouteTests: XCTestCase {
 
     let printExpectation = expectation(description: "The /route will serve static HTML content.")
 
-    URLRequest(forTestWithMethod: "GET")
+    URLRequest(forTestWithMethod: "GET")?
     .sendForTestingWithKitura { data in
-      let getResult = String(data: data, encoding: String.Encoding.utf8)
-      print("GET to /hello endpoint returned: ", getResult!)
-      XCTAssertNotNil(getResult, "GetStatic string is nil")
-      XCTAssertTrue(getResult!.contains("<h1 class=\"titleText\">IBM Kitura Starter Bluemix</h1>"))
+      if let getResult = String(data: data, encoding: String.Encoding.utf8){
+        print("GET to / endpoint returned: ", getResult)
+        XCTAssertTrue(getResult.contains("<h1 class=\"titleText\">IBM Kitura Starter Bluemix</h1>"))
+      } else {
+        XCTFail("Return value from / was nil!")
+      }
+
       printExpectation.fulfill()
     }
 
@@ -84,13 +87,13 @@ class RouteTests: XCTestCase {
 
     let printExpectation = expectation(description: "The /hello endpoint will return a String to the GET request.")
 
-    URLRequest(forTestWithMethod: "GET", route: "hello")
+    URLRequest(forTestWithMethod: "GET", route: "hello")?
     .sendForTestingWithKitura { data in
       if let getResult = String(data: data, encoding: String.Encoding.utf8) {
         print("GET to /hello endpoint returned: ", getResult)
         XCTAssertTrue(getResult.contains("Hello from Kitura-Starter!"))
       } else {
-        XCTFail("Return value from /hello was nil!")
+        XCTFail("Return value from /hello GET was nil!")
       }
 
       printExpectation.fulfill()
@@ -103,12 +106,15 @@ class RouteTests: XCTestCase {
 
     let printExpectation = expectation(description: "The /hello endpoint will return a String containing the data sent in the POST body.")
 
-    URLRequest(forTestWithMethod: "POST", route: "hello", body: "from the other side".data(using: .utf8))
+    URLRequest(forTestWithMethod: "POST", route: "hello", body: "from the other side".data(using: .utf8))?
     .sendForTestingWithKitura { data in
-      let postResult = String(data: data, encoding: String.Encoding.utf8)
-      print("POST to /hello endpoint returned: ", postResult!)
-      XCTAssertNotNil(postResult, "postResult string is nil")
-      XCTAssertTrue(postResult!.contains("Hello from the other side, from Kitura-Starter!"))
+      if let postResult = String(data: data, encoding: String.Encoding.utf8){
+        print("POST to /hello endpoint returned: ", postResult)
+        XCTAssertTrue(postResult.contains("Hello from the other side, from Kitura-Starter!"))
+      } else {
+        XCTFail("Return value from /hello POST was nil!")
+      }
+
       printExpectation.fulfill()
     }
 
@@ -119,7 +125,7 @@ class RouteTests: XCTestCase {
 
     let printExpectation = expectation(description: "The /json endpoint will return a JSON object to the GET request")
 
-    URLRequest(forTestWithMethod: "GET", route: "json")
+    URLRequest(forTestWithMethod: "GET", route: "json")?
     .sendForTestingWithKitura { data in
       let getJSONResult = JSON(data: data)
       print("GET to /hello endpoint returned: ", getJSONResult)
@@ -139,15 +145,18 @@ class RouteTests: XCTestCase {
 
 private extension URLRequest {
 
-  init(forTestWithMethod method: String, route: String = "", body: Data? = nil) {
-    let url = URL(string: "http://127.0.0.1:8080/" + route)
-    XCTAssertNotNil(url, "URL is nil, the following route may be invalid: \(route)")
-    self.init(url: url!)
-    addValue("application/json", forHTTPHeaderField: "Content-Type")
-    httpMethod = method
-    cachePolicy = .reloadIgnoringCacheData
-    if let body = body {
-      httpBody = body
+  init?(forTestWithMethod method: String, route: String = "", body: Data? = nil) {
+    if let url = URL(string: "http://127.0.0.1:8080/" + route){
+      self.init(url: url)
+      addValue("application/json", forHTTPHeaderField: "Content-Type")
+      httpMethod = method
+      cachePolicy = .reloadIgnoringCacheData
+      if let body = body {
+        httpBody = body
+      }
+    } else {
+      XCTFail("URL is nil... )")
+      return nil
     }
   }
 
