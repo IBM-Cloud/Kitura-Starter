@@ -16,7 +16,7 @@
 Kitura-Starter is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on Bluemix. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 14.04](http://www.ubuntu.com/download) system.
 
 ## Application Requirements
-To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `3.1` release binaries. Compatibility with other Swift versions is not guaranteed.
+To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `3.1.1` release binaries. Compatibility with other Swift versions is not guaranteed.
 
 For further details on executing Kitura-based applications locally, please see Kitura's instructions for installation on [macOS ](https://github.com/IBM-Swift/Kitura#installation-os-x) and on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) since system level dependencies may be required before attempting to execute this starter app.
 
@@ -115,9 +115,9 @@ dotnet_core_buildpack                   26         true      false    dotnet-cor
 swift_buildpack_v2_0_4-20170125-2344    27         true      false    buildpack_swift_v2.0.4-20170125-2344.zip
 ```
 
-Looking at the output above, we can see that the IBM Bluemix buildpack for Swift is installed on Bluemix. This will allow a seamless deployment of the starter application to Bluemix.
+Looking at the output above, we can see that the Swift buildpack is installed on Bluemix. This will allow a seamless deployment of the starter application to Bluemix.
 
-After you have cloned this Git repo, go to its root folder on your system and issue the `bx app push` command:
+After you have cloned this Git repo, go to its root folder on your system and issue the `bx app push` command. Here is some sample output from the Swift buildpack (v2.0.5) running Swift 3.1:
 
 ```
 $ bx app push
