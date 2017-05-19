@@ -38,7 +38,8 @@ class RouteTests: XCTestCase {
       ("testGetStatic", testGetStatic),
       ("testGetHello", testGetHello),
       ("testPostHello", testPostHello),
-      ("testGetJSON", testGetJSON)
+      ("testGetJSON", testGetJSON),
+      ("testGetHealthCheck", testGetHealthCheck)
     ]
   }
 
@@ -138,6 +139,25 @@ class RouteTests: XCTestCase {
       printExpectation.fulfill()
     }
 
+    waitForExpectations(timeout: 10.0, handler: nil)
+  }
+  
+  func testGetHealthCheck() {
+    
+    let printExpectation = expectation(description: "The /health endpoint will return a String to the GET request.")
+    
+    URLRequest(forTestWithMethod: "GET", route: "health")?
+      .sendForTestingWithKitura { data in
+        if let getResult = String(data: data, encoding: String.Encoding.utf8) {
+          print("GET to /health endpoint returned: ", getResult)
+          XCTAssertTrue(getResult.contains("UP"))
+        } else {
+          XCTFail("Return value from /health GET was nil!")
+        }
+        
+        printExpectation.fulfill()
+    }
+    
     waitForExpectations(timeout: 10.0, handler: nil)
   }
 }
