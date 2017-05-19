@@ -52,6 +52,9 @@ public class Controller {
 
     // JSON Get request
     router.get("/json", handler: getJSON)
+    
+    // Basic application health check
+    router.get("/health", handler: getHealthCheck)
   }
 
   /**
@@ -89,6 +92,14 @@ public class Controller {
     jsonResponse["organization"].stringValue = "Swift @ IBM"
     jsonResponse["location"].stringValue = "Austin, Texas"
     try response.status(.OK).send(json: jsonResponse).end()
+  }
+    
+  /**
+   * Handler for getting a text/plain response of application health status.
+   */
+  public func getHealthCheck(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
+    Log.debug("GET - /health route handler...")
+    try response.send("{\"status\":\"UP\"}").end()
   }
 
 }
