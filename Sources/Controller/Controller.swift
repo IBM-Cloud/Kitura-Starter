@@ -99,7 +99,7 @@ public class Controller {
    */
   public func getHealthCheck(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("GET - /health route handler...")
-    try response.send("{\"status\":\"UP\"}").end()
+    try response.send(json: ["status": "UP"]).end()
   }
 
 }
