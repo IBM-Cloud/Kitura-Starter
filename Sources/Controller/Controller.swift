@@ -21,11 +21,13 @@ import LoggerAPI
 import Configuration
 import CloudFoundryEnv
 import CloudFoundryConfig
+import Health
 
 public class Controller {
 
   public let router: Router
   let configMgr: ConfigurationManager
+  let health: Health
 
   public var port: Int {
     get { return configMgr.port }
@@ -40,6 +42,9 @@ public class Controller {
 
     // All web apps need a Router instance to define routes
     router = Router()
+    
+    // Instance of health for reporting heath check values
+    health = Health()
 
     // Serve static content from "public"
     router.all("/", middleware: StaticFileServer())
@@ -99,7 +104,12 @@ public class Controller {
    */
   public func getHealthCheck(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("GET - /health route handler...")
-    try response.send(json: ["status": "UP"]).end()
+    let result = health.status.toSimpleDictionary()
+    if health.status.state == .UP {
+        try response.send(json: result).end()
+    } else {
+        try response.status(.serviceUnavailable).send(json: result).end()
+    }
   }
 
 }

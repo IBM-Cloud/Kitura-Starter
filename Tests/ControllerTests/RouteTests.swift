@@ -24,11 +24,9 @@ import Foundation
 import Kitura
 import KituraNet
 import XCTest
-import Dispatch
 import HeliumLogger
 import SwiftyJSON
 
-//import KituraStarterRouter
 @testable import Controller
 
 class RouteTests: XCTestCase {
@@ -44,16 +42,13 @@ class RouteTests: XCTestCase {
   }
 
   private let controller = Controller()
-  private let queue = DispatchQueue(label: "Kitura runloop", qos: .userInitiated, attributes: .concurrent)
 
   override func setUp() {
     super.setUp()
+    
     HeliumLogger.use()
     Kitura.addHTTPServer(onPort: 8080, with: controller.router)
-
-    queue.async {
-      Kitura.start()
-    }
+    Kitura.start()
 
     print("------------------------------")
     print("------------New Test----------")
@@ -67,7 +62,7 @@ class RouteTests: XCTestCase {
 
   func testGetStatic() {
 
-    let printExpectation = expectation(description: "The /route will serve static HTML content.")
+    let printExpectation = expectation(description: "The / route will serve static HTML content.")
 
     URLRequest(forTestWithMethod: "GET")?
     .sendForTestingWithKitura { data in
