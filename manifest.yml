@@ -6,5 +6,6 @@ applications:
   disk_quota: 1024M
   command: Kitura-Starter
   buildpack: swift_buildpack
-  health-check-type: http
-  health-check-http-endpoint: /health
+  # Will re-add health-check lines once CF is upgraded within the Bluemix CLI
+  # health-check-type: http
+  # health-check-http-endpoint: /health
