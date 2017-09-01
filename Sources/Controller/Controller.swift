@@ -14,31 +14,29 @@
 * limitations under the License.
 **/
 
-import Foundation
 import Kitura
 import SwiftyJSON
 import LoggerAPI
-import Configuration
-import CloudFoundryEnv
-import CloudFoundryConfig
+import CloudEnvironment
 import Health
 
 public class Controller {
 
   public let router: Router
-  let configMgr: ConfigurationManager
+  let cloudEnv: CloudEnv
   let health: Health
 
   public var port: Int {
-    get { return configMgr.port }
+    get { return cloudEnv.port }
   }
 
   public var url: String {
-    get { return configMgr.url }
+    get { return cloudEnv.url }
   }
 
   public init() {
-    configMgr = ConfigurationManager().load(.environmentVariables)
+    // Create CloudEnv instance
+    cloudEnv = CloudEnv()
 
     // All web apps need a Router instance to define routes
     router = Router()

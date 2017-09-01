@@ -20,13 +20,14 @@ let package = Package(
   name: "Kitura-Starter",
   targets: [
     Target(name: "Kitura-Starter",
-           dependencies: [.Target(name: "Controller")]),
+      dependencies: [.Target(name: "Controller")]),
     Target(name: "Controller")
   ],
   dependencies: [
     .Package(url: "https://github.com/IBM-Swift/Kitura.git", majorVersion: 1, minor: 7),
     .Package(url: "https://github.com/IBM-Swift/HeliumLogger.git", majorVersion: 1, minor: 7),
-    .Package(url: "https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git", majorVersion: 3),
+    .Package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", majorVersion: 4),
+    .Package(url: "https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git", majorVersion: 4),
     .Package(url: "https://github.com/IBM-Swift/Health.git", majorVersion: 0)
   ]
 )
