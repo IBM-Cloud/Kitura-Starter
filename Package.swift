@@ -24,19 +24,23 @@ let package = Package(
     products: [
       .library(
         name: "Kitura-Starter",
-        targets: ["Kitura-Starter"]
+        targets:  ["Kitura-Starter", "Controller"]
       )
     ],
     dependencies: [
       .package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from: "1.7.0")),
-      .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", .upToNextMinor(from: "1.7.0"))
-      .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "5.0.0")),
-      .package(url: "https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git", .upToNextMajor(from: "5.0.0")),
+      .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", .upToNextMajor(from: "1.0.0")),
+      .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "4.0.0")),
+      .package(url: "https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git", .upToNextMajor(from: "4.0.0")),
       .package(url: "https://github.com/IBM-Swift/Health.git", .upToNextMajor(from: "0.0.0"))
     ],
     targets: [
       .target(
         name: "Kitura-Starter",
+        dependencies: ["Kitura", "HeliumLogger", "CloudEnvironment", "CloudFoundryDeploymentTracker", "Health", "Controller"]
+      ),
+      .target(
+        name: "Controller",
         dependencies: ["Kitura", "HeliumLogger", "CloudEnvironment", "CloudFoundryDeploymentTracker", "Health"]
       ),
       .testTarget(
