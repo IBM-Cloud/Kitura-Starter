@@ -1,6 +1,4 @@
 .build/*
 .build-ubuntu/*
 Package.resolved
-*.xcodeproj/project.xcworkspace/xcuserdata/
-*.xcodeproj/xcuserdata/
-*.xcodeproj/
+*.xcodeproj/*
