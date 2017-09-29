@@ -1,5 +1,7 @@
 .build/*
+.build-ubuntu/*
 Packages/*
+Package.resolved
 Kitura-Starter.xcodeproj/project.xcworkspace/xcuserdata/
 Kitura-Starter.xcodeproj/xcuserdata/
 Kitura-Starter.xcodeproj/
