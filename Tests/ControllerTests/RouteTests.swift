@@ -27,7 +27,7 @@ import XCTest
 import HeliumLogger
 import SwiftyJSON
 
-@testable import Kitura-Starter
+@testable import Controller
 
 class RouteTests: XCTestCase {
 

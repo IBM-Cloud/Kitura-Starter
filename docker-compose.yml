@@ -4,4 +4,4 @@ app:
     - "8080:8080"
   volumes:
     - .:/Kitura-Starter
-  command: bash -c "cd /Kitura-Starter && swift package --build-path .build-ubuntu clean && swift build --build-path .build-ubuntu && .build-ubuntu/x86_64-unknown-linux/debug/Kitura-Starter"
+  command: bash -c "cd /Kitura-Starter && swift package --build-path .build-ubuntu clean && swift build --build-path .build-ubuntu && swift test"

@@ -20,7 +20,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Kitura-Starter",
+    name: "KituraStarter",
     products: [
       .library(
         name: "Kitura-Starter",
@@ -45,7 +45,7 @@ let package = Package(
       ),
       .testTarget(
         name: "ControllerTests",
-        dependencies: ["Kitura-Starter"]
+        dependencies: ["Kitura-Starter", "Controller"]
       )
     ]
 )
