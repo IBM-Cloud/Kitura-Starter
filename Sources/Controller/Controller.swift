@@ -15,17 +15,25 @@
 **/
 
 import Kitura
-import SwiftyJSON
+import Foundation
 import LoggerAPI
 import CloudEnvironment
 import Health
+
+struct ProjectInfo: Codable {
+    let framework = "Kitura"
+    let applicationName = "Kitura-Starter"
+    let company = "IBM"
+    let organization = "Swift @ IBM"
+    let location = "Austin, Texas"
+}
 
 public class Controller {
 
   public let router: Router
   let cloudEnv: CloudEnv
   let health: Health
-
+    
   public var port: Int {
     get { return cloudEnv.port }
   }
@@ -88,13 +96,9 @@ public class Controller {
   public func getJSON(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("GET - /json route handler...")
     response.headers["Content-Type"] = "application/json; charset=utf-8"
-    var jsonResponse = JSON([:])
-    jsonResponse["framework"].stringValue = "Kitura"
-    jsonResponse["applicationName"].stringValue = "Kitura-Starter"
-    jsonResponse["company"].stringValue = "IBM"
-    jsonResponse["organization"].stringValue = "Swift @ IBM"
-    jsonResponse["location"].stringValue = "Austin, Texas"
-    try response.status(.OK).send(json: jsonResponse).end()
+
+    let json = try JSONEncoder().encode(ProjectInfo())
+    try response.status(.OK).send(data: json).end()
   }
     
   /**

@@ -1,6 +1,6 @@
 ![Kitura](https://raw.githubusercontent.com/IBM-Swift/Kitura/master/Documentation/KituraLogo.png)
 
-[![Build Status - Develop](https://travis-ci.org/IBM-Bluemix/Kitura-Starter.svg?branch=develop)](https://travis-ci.org/IBM-Bluemix/Kitura-Starter)
+[![Build Status - Master](https://travis-ci.org/IBM-Bluemix/Kitura-Starter.svg?branch=master)](https://travis-ci.org/IBM-Bluemix/Kitura-Starter)
 [![Join the chat at https://gitter.im/IBM-Swift/Kitura](https://badges.gitter.im/IBM-Swift/Kitura.svg)](https://gitter.im/IBM-Swift/Kitura?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![macOS](https://img.shields.io/badge/os-Mac%20OS%20X-green.svg?style=flat)](http://www.apple.com/macos/)
 [![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)](http://releases.ubuntu.com/14.04/)
@@ -16,7 +16,7 @@
 Kitura-Starter is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on Bluemix. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 14.04](http://www.ubuntu.com/download) system.
 
 ## Application Requirements
-To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `3.1.1` release binaries. Compatibility with other Swift versions is not guaranteed.
+To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `4.0` release binaries. Compatibility with other Swift versions is not guaranteed.
 
 For further details on executing Kitura-based applications locally, please see Kitura's instructions for installation on [macOS ](https://github.com/IBM-Swift/Kitura#installation-os-x) and on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) since system level dependencies may be required before attempting to execute this starter app.
 
