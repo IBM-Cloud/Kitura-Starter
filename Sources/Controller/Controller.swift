@@ -20,12 +20,12 @@ import LoggerAPI
 import CloudEnvironment
 import Health
 
-struct ProjectInfo: Codable {
-    let framework = "Kitura"
-    let applicationName = "Kitura-Starter"
-    let company = "IBM"
-    let organization = "Swift @ IBM"
-    let location = "Austin, Texas"
+struct Project: Codable {
+    let framework: String
+    let applicationName: String
+    let company: String
+    let organization: String
+    let location: String
 }
 
 public class Controller {
@@ -96,8 +96,9 @@ public class Controller {
   public func getJSON(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("GET - /json route handler...")
     response.headers["Content-Type"] = "application/json; charset=utf-8"
-
-    let json = try JSONEncoder().encode(ProjectInfo())
+    let project = Project(framework: "Kitura", applicationName: "Kitura-Starter",
+      company: "IBM", organization: "Swift @ IBM", location: "Austin, Texas")
+    let json = try JSONEncoder().encode(project)
     try response.status(.OK).send(data: json).end()
   }
     
