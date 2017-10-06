@@ -24,7 +24,6 @@ import Foundation
 import Kitura
 import KituraNet
 import XCTest
-import HeliumLogger
 import SwiftyJSON
 
 @testable import Controller
@@ -45,8 +44,6 @@ class RouteTests: XCTestCase {
 
   override func setUp() {
     super.setUp()
-    
-    HeliumLogger.use()
     Kitura.addHTTPServer(onPort: 8080, with: controller.router)
     Kitura.start()
 
@@ -136,11 +133,11 @@ class RouteTests: XCTestCase {
 
     waitForExpectations(timeout: 10.0, handler: nil)
   }
-  
+
   func testGetHealthCheck() {
-    
+
     let printExpectation = expectation(description: "The /health endpoint will return a String to the GET request.")
-    
+
     URLRequest(forTestWithMethod: "GET", route: "health")?
       .sendForTestingWithKitura { data in
         if let getResult = String(data: data, encoding: String.Encoding.utf8) {
@@ -149,10 +146,10 @@ class RouteTests: XCTestCase {
         } else {
           XCTFail("Return value from /health GET was nil!")
         }
-        
+
         printExpectation.fulfill()
     }
-    
+
     waitForExpectations(timeout: 10.0, handler: nil)
   }
 }
