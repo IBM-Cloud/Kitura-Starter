@@ -26,14 +26,13 @@ EXPOSE 8080
 RUN mkdir /Kitura-Starter
 
 ADD Sources /Kitura-Starter/Sources
+ADD Tests /Kitura-Starter/Tests
 ADD public /Kitura-Starter/public
 ADD Package.swift /Kitura-Starter
 ADD Package.resolved /Kitura-Starter
 ADD LICENSE /Kitura-Starter
 ADD .swift-version /Kitura-Starter
-
 RUN cd /Kitura-Starter && swift build
 
-USER root
 #CMD ["/Kitura-Starter/.build/debug/Kitura-Starter"]
 CMD [ "sh", "-c", "cd /Kitura-Starter && .build/x86_64-unknown-linux/debug/Kitura-Starter" ]

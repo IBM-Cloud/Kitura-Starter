@@ -24,7 +24,6 @@ import Foundation
 import Kitura
 import KituraNet
 import XCTest
-import HeliumLogger
 import SwiftyJSON
 
 @testable import Controller
@@ -45,8 +44,6 @@ class RouteTests: XCTestCase {
 
   override func setUp() {
     super.setUp()
-
-    HeliumLogger.use()
     Kitura.addHTTPServer(onPort: 8080, with: controller.router)
     Kitura.start()
 

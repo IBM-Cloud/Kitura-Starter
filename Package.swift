@@ -28,24 +28,24 @@ let package = Package(
       )
     ],
     dependencies: [
-      .package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from: "1.7.0")),
-      .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", .upToNextMajor(from: "1.0.0")),
-      .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "4.0.0")),
-      .package(url: "https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git", .upToNextMajor(from: "4.0.0")),
-      .package(url: "https://github.com/IBM-Swift/Health.git", .upToNextMajor(from: "0.0.0"))
+      .package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from: "1.7.9")),
+      .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", .upToNextMajor(from: "1.7.1")),
+      .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "4.0.5")),
+      .package(url: "https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git", .upToNextMajor(from: "4.0.1")),
+      .package(url: "https://github.com/IBM-Swift/Health.git", .upToNextMajor(from: "0.0.1"))
     ],
     targets: [
       .target(
         name: "Kitura-Starter",
-        dependencies: ["Kitura", "HeliumLogger", "CloudEnvironment", "CloudFoundryDeploymentTracker", "Health", "Controller"]
+        dependencies: ["Kitura", "HeliumLogger", "CloudFoundryDeploymentTracker", "Controller"]
       ),
       .target(
         name: "Controller",
-        dependencies: ["Kitura", "HeliumLogger", "CloudEnvironment", "CloudFoundryDeploymentTracker", "Health"]
+        dependencies: ["Kitura", "CloudEnvironment", "Health"]
       ),
       .testTarget(
         name: "ControllerTests",
-        dependencies: ["Kitura-Starter", "Controller"]
+        dependencies: ["Controller"]
       )
     ]
 )
