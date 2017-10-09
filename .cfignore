@@ -1,8 +1,7 @@
 .build/*
-Packages/*
+.build-ubuntu/*
 .travis.yml
+ci/*
 docker-compose.yml
 Dockerfile
-Kitura-Starter.xcodeproj/project.xcworkspace/xcuserdata/
-Kitura-Starter.xcodeproj/xcuserdata/
-Kitura-Starter.xcodeproj/
+*.xcodeproj/*
