@@ -24,7 +24,6 @@ import Foundation
 import Kitura
 import KituraNet
 import XCTest
-import SwiftyJSON
 
 @testable import Controller
 
@@ -120,14 +119,17 @@ class RouteTests: XCTestCase {
 
     URLRequest(forTestWithMethod: "GET", route: "json")?
     .sendForTestingWithKitura { data in
-      let getJSONResult = JSON(data: data)
-      print("GET to /hello endpoint returned: ", getJSONResult)
-      XCTAssertNotNil(getJSONResult, "GetHello string is nil")
-      XCTAssertEqual(getJSONResult["framework"].string, "Kitura")
-      XCTAssertEqual(getJSONResult["applicationName"].string, "Kitura-Starter")
-      XCTAssertEqual(getJSONResult["location"].string, "Austin, Texas")
-      XCTAssertEqual(getJSONResult["company"].string, "IBM")
-      XCTAssertEqual(getJSONResult["organization"].string, "Swift @ IBM")
+      guard let project = try? JSONDecoder().decode(Project.self, from: data) else {
+        XCTFail("Failed to get JSON payload for Project structure from /json endpoint.")
+        return
+      }
+    
+      print("GET to /hello endpoint returned: ", project)
+      XCTAssertEqual(project.framework, "Kitura")
+      XCTAssertEqual(project.applicationName, "Kitura-Starter")
+      XCTAssertEqual(project.location, "Austin, Texas")
+      XCTAssertEqual(project.company, "IBM")
+      XCTAssertEqual(project.organization, "Swift @ IBM")
       printExpectation.fulfill()
     }
 
