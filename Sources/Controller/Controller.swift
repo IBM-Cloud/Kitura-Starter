@@ -98,8 +98,8 @@ public class Controller {
     response.headers["Content-Type"] = "application/json; charset=utf-8"
     let project = Project(framework: "Kitura", applicationName: "Kitura-Starter",
       company: "IBM", organization: "Swift @ IBM", location: "Austin, Texas")
-    let json = try JSONEncoder().encode(project)
-    try response.status(.OK).send(data: json).end()
+    // Send codable object as response
+    try response.status(.OK).send(project).end()
   }
     
   /**
