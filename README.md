@@ -284,7 +284,7 @@ buildpack: swift_buildpack
 Once the application is pushed to and running on Bluemix, you can access your application route to see the welcome page for the Kitura-Starter app. You can log on to your [Bluemix account](https://console.ng.bluemix.net) to find the route of your application or you can inspect the output from the execution of the `bx app push` command.  The string value (e.g. Kitura-Starter-unfiducial-flab.eu-gb.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
 
 ## Kitura Wiki
-Feel free to visit Kitura's [Wiki](https://github.com/IBM-Swift/Kitura/wiki) and [Kitura.io](http://www.kitura.io/) for our roadmap and tutorials.
+Feel free to visit [Kitura.io](http://www.kitura.io/) for our roadmap and tutorials.
 
 ## Privacy Notice
 This Swift application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) service on each deployment:
