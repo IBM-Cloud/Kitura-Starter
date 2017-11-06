@@ -107,11 +107,11 @@ public class Controller {
    */
   public func getHealthCheck(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
     Log.debug("GET - /health route handler...")
-    let result = health.status.toSimpleDictionary()
+    let status = health.status
     if health.status.state == .UP {
-        try response.send(json: result).end()
+      try response.status(.OK).send(status).end()
     } else {
-        try response.status(.serviceUnavailable).send(json: result).end()
+      try response.status(.serviceUnavailable).send(status).end()
     }
   }
 
