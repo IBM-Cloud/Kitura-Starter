@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/CloudEnvironment.git",
         "state": {
           "branch": null,
-          "revision": "1100268ee17670fd320b0d9463a66e13ca24755f",
-          "version": "4.0.5"
+          "revision": "500bf578205d324b36c487069400dfa9cc2a4314",
+          "version": "5.0.0"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git",
         "state": {
           "branch": null,
-          "revision": "4e897a46a050dd959e010ec210e585cdb484d0de",
-          "version": "4.0.1"
+          "revision": "157d8bc9d6a4aaf32f1609361c08bcd9f397eaad",
+          "version": "5.0.0"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/Swift-cfenv.git",
         "state": {
           "branch": null,
-          "revision": "6ded559c54871fd7a94a0c7fabe51e096bb1e392",
-          "version": "4.1.0"
+          "revision": "b58de4a3158dde0c81912e774cb92a38f8d9368a",
+          "version": "5.0.0"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/Configuration.git",
         "state": {
           "branch": null,
-          "revision": "9973bcc64f41c81c9716bf1306079be61f29c998",
-          "version": "1.0.4"
+          "revision": "20e2167fc80a039e3ee75ff3940c19c71084395e",
+          "version": "2.0.0"
         }
       },
       {
