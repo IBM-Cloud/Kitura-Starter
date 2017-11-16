@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/Kitura.git",
         "state": {
           "branch": null,
-          "revision": "744a8fbc25a94f598d77662fd71eaa25d789c3fe",
-          "version": "2.0.0"
+          "revision": "57a46cc4a12b368208c0572eb6172cf3cb95991b",
+          "version": "2.0.2"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/KituraContracts.git",
         "state": {
           "branch": null,
-          "revision": "60ad79cfffeeb9693f53dd68067783d4fde5dc4d",
-          "version": "0.0.14"
+          "revision": "385c5698b5c6ffb3416f810dd71c317be40076cc",
+          "version": "0.0.15"
         }
       },
       {
