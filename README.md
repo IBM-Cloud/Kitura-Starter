@@ -30,21 +30,23 @@ Once you have installed the Swift compiler and any system level dependencies req
 
 ```
 $ swift build
-Compile Swift Module 'Socket' (3 sources)
-Compile Swift Module 'SwiftyJSON' (2 sources)
-Compile Swift Module 'LoggerAPI' (1 sources)
-Compile Swift Module 'KituraTemplateEngine' (1 sources)
-Compile Swift Module 'HeliumLogger' (1 sources)
-Compile Swift Module 'SSLService' (1 sources)
-Compile Swift Module 'CloudFoundryEnv' (7 sources)
 Compile CHTTPParser utils.c
 Compile CHTTPParser http_parser.c
-Linking CHTTPParser
-Compile Swift Module 'KituraNet' (34 sources)
-Compile Swift Module 'CloudFoundryDeploymentTracker' (1 sources)
-Compile Swift Module 'Kitura' (41 sources)
-Compile Swift Module 'Kitura_Starter' (2 sources)
-Linking ./.build/debug/Kitura-Starter
+Compile Swift Module 'KituraTemplateEngine' (1 sources)
+Compile Swift Module 'Socket' (3 sources)
+Compile Swift Module 'LoggerAPI' (1 sources)
+Compile Swift Module 'KituraContracts' (2 sources)
+Compile Swift Module 'HeliumLogger' (2 sources)
+Compile Swift Module 'Health' (3 sources)
+Compile Swift Module 'Configuration' (6 sources)
+Compile Swift Module 'CloudFoundryEnv' (6 sources)
+Compile Swift Module 'CloudEnvironment' (17 sources)
+Compile Swift Module 'SSLService' (1 sources)
+Compile Swift Module 'KituraNet' (36 sources)
+Compile Swift Module 'Kitura' (46 sources)
+Compile Swift Module 'Controller' (1 sources)
+Compile Swift Module 'Kitura_Starter' (1 sources)
+Linking ./.build/x86_64-apple-macosx10.10/debug/Kitura-Starter
 ```
 
 Once the application is compiled, you can start the server (note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter`):
@@ -170,14 +172,12 @@ Staging...
        Cloning https://github.com/IBM-Swift/Kitura.git
        Resolving https://github.com/IBM-Swift/BlueSSLService.git at 0.12.30
        Resolving https://github.com/IBM-Swift/LoggerAPI.git at 1.6.0
-       Fetching https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git
        Fetching https://github.com/IBM-Swift/CCurl.git
        Fetching https://github.com/IBM-Swift/Kitura-TemplateEngine.git
        Cloning https://github.com/IBM-Swift/CEpoll.git
        Resolving https://github.com/IBM-Swift/CEpoll.git at 0.1.0
        Resolving https://github.com/IBM-Swift/HeliumLogger.git at 1.6.1
        Cloning https://github.com/IBM-Swift/Kitura-net.git
-       Cloning https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git
        Resolving https://github.com/IBM-Swift/BlueSocket.git at 0.12.41
        Fetching https://github.com/IBM-Swift/Kitura.git
        Fetching https://github.com/IBM-Swift/CEpoll.git
@@ -197,7 +197,6 @@ Staging...
        Cloning https://github.com/IBM-Swift/HeliumLogger.git
        Cloning https://github.com/IBM-Swift/BlueSSLService.git
        Resolving https://github.com/IBM-Swift/Kitura-net.git at 1.6.2
-       Resolving https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git at 3.0.0
        Cloning https://github.com/IBM-Swift/CloudConfiguration.git
        Resolving https://github.com/IBM-Swift/CloudConfiguration.git at 2.0.0
        Cloning https://github.com/IBM-Swift/BlueSocket.git
@@ -233,7 +232,6 @@ Staging...
        Linking CHTTPParser
        Compile Swift Module 'KituraNet' (34 sources)
        Compile Swift Module 'Kitura' (43 sources)
-       Compile Swift Module 'CloudFoundryDeploymentTracker' (1 sources)
        Compile Swift Module 'Kitura_Starter' (2 sources)
        Linking ./.build/release/Kitura-Starter
 -----> Copying dynamic libraries
