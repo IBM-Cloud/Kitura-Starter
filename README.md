@@ -263,7 +263,7 @@ OK
 
 App Kitura-Starter was started using this command `Kitura-Starter`
 
-Showing health and status for app Kitura-Starter in org roliv@us.ibm.com / space dev as roliv@us.ibm.com...
+Showing health and status for Kitura-Starter in org roliv@us.ibm.com / space dev as roliv@us.ibm.com...
 OK
 
 requested state: started
