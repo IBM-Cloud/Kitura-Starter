@@ -1,5 +1,5 @@
 /**
-* Copyright IBM Corporation 2016,2017
+* Copyright IBM Corporation 2016, 2017, 2018
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public class Controller {
   public let router: Router
   let cloudEnv: CloudEnv
   let health: Health
-    
+
   public var port: Int {
     get { return cloudEnv.port }
   }
@@ -48,7 +48,7 @@ public class Controller {
 
     // All web apps need a Router instance to define routes
     router = Router()
-    
+
     // Instance of health for reporting heath check values
     health = Health()
 
@@ -63,7 +63,7 @@ public class Controller {
 
     // JSON Get request
     router.get("/json", handler: getJSON)
-    
+
     // Basic application health check
     router.get("/health", handler: getHealthCheck)
   }
@@ -101,7 +101,7 @@ public class Controller {
     // Send codable object as response
     try response.status(.OK).send(project).end()
   }
-    
+
   /**
    * Handler for getting a text/plain response of application health status.
    */

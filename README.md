@@ -15,7 +15,7 @@
 Kitura-Starter is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on the IBM Cloud. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 14.04](http://www.ubuntu.com/download) system.
 
 ## Application Requirements
-To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `4.0.3` release binaries. Compatibility with other Swift versions is not guaranteed.
+To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `4.1.2` release binaries. Compatibility with other Swift versions is not guaranteed.
 
 For further details on executing Kitura-based applications locally, please see Kitura's instructions for installation on [macOS ](https://github.com/IBM-Swift/Kitura#installation-os-x) and on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) since system level dependencies may be required before attempting to execute this starter app.
 
@@ -69,13 +69,10 @@ Once the server starts, you should see the message _Listening on port 8080_ as s
 
 7) To receive a JSON payload that states the health of the application, point your browser to [http://localhost:8080/health](http://localhost:8080/health).
 
-## Pushing the application to the IBM Cloud
+## Pushing the application to IBM Cloud
 ### Using the Deploy to IBM Cloud button
 Clicking on the button below deploys this starter application to the IBM Cloud. The `manifest.yml` file [included in the repo] is parsed to obtain the name of the application and configuration details. For further details on the structure of the `manifest.yml` file, see the [Cloud Foundry documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#minimal-manifest).
 
-<!---
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
--->
 [![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM-Cloud/Kitura-Starter.git)
 
 Once deployment to the IBM Cloud is completed, you can access the route assigned to your application using the web browser of your choice. You should then see the welcome page for the Kitura-Starter app! To access a plain text greeting, point your browser to `http://<application_route>/hello`. To perform a `POST` operation, use your preferred REST client (e.g. [Postman](https://www.getpostman.com/)) to send a string to `http://<application_route>/hello`. You should get a text response that includes the string you sent to the endpoint. Finally, to receive a JSON payload, point your browser to `http://<application_route>/json`.
@@ -98,7 +95,7 @@ Getting buildpacks...
 buildpack                              position   enabled   locked   filename
 liberty-for-java                        1          true      false    buildpack_liberty-for-java_v3.8-20170308-1507.zip
 sdk-for-nodejs                          2          true      false    buildpack_sdk-for-nodejs_v3.11-20170303-1144.zip
-swift_buildpack                         3          true      false    buildpack_swift_v2.0.5-20170328-1639.zip
+swift_buildpack                         3          true      false    buildpack_swift_v2.0.11-20170328-1639.zip
 dotnet-core                             4          true      false    buildpack_dotnet-core_v1.0.10-20170124-1145.zip
 java_buildpack                          5          true      false    java-buildpack-v3.13.zip
 ruby_buildpack                          6          true      false    ruby_buildpack-cached-v1.6.34.zip
@@ -154,9 +151,9 @@ Staging...
 -----> No Aptfile found.
 -----> Configure for apt-get installs...
 -----> Writing profile script...
------> Getting swift-3.1
-       Cached swift-3.1
------> Unpacking swift-3.1.tar.gz
+-----> Getting swift-4.1.2
+       Cached swift-4.1.2
+-----> Unpacking swift-4.1.2.tar.gz
 -----> Getting clang-3.8.0
        Cached clang-3.8.0
 -----> Unpacking clang-3.8.0.tar.xz

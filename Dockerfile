@@ -1,5 +1,5 @@
 ##
-# Copyright IBM Corporation 2016, 2017
+# Copyright IBM Corporation 2016, 2017, 2018
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 # Builds a Docker image with all the dependencies for compiling and running the Kitura-Starter sample application.
 
-FROM ibmcom/swift-ubuntu:4.0.2
+FROM ibmcom/swift-ubuntu:4.1.2
 MAINTAINER IBM Swift Engineering at IBM Cloud
 LABEL Description="Docker image for building and running the Kitura-Starter sample application."
 
