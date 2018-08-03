@@ -15,7 +15,7 @@
 Kitura-Starter is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on the IBM Cloud. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 14.04](http://www.ubuntu.com/download) system.
 
 ## Application Requirements
-To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `4.1.2` release binaries. Compatibility with other Swift versions is not guaranteed.
+To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `4.1.2+` release binaries. Compatibility with other Swift versions is not guaranteed.
 
 For further details on executing Kitura-based applications locally, please see Kitura's instructions for installation on [macOS ](https://github.com/IBM-Swift/Kitura#installation-os-x) and on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) since system level dependencies may be required before attempting to execute this starter app.
 
@@ -145,15 +145,15 @@ Creating container
 Downloading app package...
 Downloaded app package (27.7K)
 Staging...
------> Buildpack version 2.0.5
+-----> Buildpack version 2.0.14
 -----> Default supported Swift version is 3.1
 -----> Copying deb files to installation folder...
 -----> No Aptfile found.
 -----> Configure for apt-get installs...
 -----> Writing profile script...
------> Getting swift-4.1.2
-       Cached swift-4.1.2
------> Unpacking swift-4.1.2.tar.gz
+-----> Getting swift-4.1.3
+       Cached swift-4.1.3
+-----> Unpacking swift-4.1.3.tar.gz
 -----> Getting clang-3.8.0
        Cached clang-3.8.0
 -----> Unpacking clang-3.8.0.tar.xz
