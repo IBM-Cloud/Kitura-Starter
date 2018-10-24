@@ -151,9 +151,9 @@ Staging...
 -----> No Aptfile found.
 -----> Configure for apt-get installs...
 -----> Writing profile script...
------> Getting swift-4.1.3
-       Cached swift-4.1.3
------> Unpacking swift-4.1.3.tar.gz
+-----> Getting swift-4.2
+       Cached swift-4.2
+-----> Unpacking swift-4.2.tar.gz
 -----> Getting clang-3.8.0
        Cached clang-3.8.0
 -----> Unpacking clang-3.8.0.tar.xz
