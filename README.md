@@ -15,7 +15,7 @@
 Kitura-Starter is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on the IBM Cloud. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 14.04](http://www.ubuntu.com/download) system.
 
 ## Application Requirements
-To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `4.1.2+` release binaries. Compatibility with other Swift versions is not guaranteed.
+To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `4.2+` release binaries. Compatibility with other Swift versions is not guaranteed.
 
 For further details on executing Kitura-based applications locally, please see Kitura's instructions for installation on [macOS ](https://github.com/IBM-Swift/Kitura#installation-os-x) and on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) since system level dependencies may be required before attempting to execute this starter app.
 
@@ -95,7 +95,7 @@ Getting buildpacks...
 buildpack                              position   enabled   locked   filename
 liberty-for-java                        1          true      false    buildpack_liberty-for-java_v3.8-20170308-1507.zip
 sdk-for-nodejs                          2          true      false    buildpack_sdk-for-nodejs_v3.11-20170303-1144.zip
-swift_buildpack                         3          true      false    buildpack_swift_v2.0.11-20170328-1639.zip
+swift_buildpack                         3          true      false    buildpack_swift_v2.0.15-20170328-1639.zip
 dotnet-core                             4          true      false    buildpack_dotnet-core_v1.0.10-20170124-1145.zip
 java_buildpack                          5          true      false    java-buildpack-v3.13.zip
 ruby_buildpack                          6          true      false    ruby_buildpack-cached-v1.6.34.zip
@@ -117,7 +117,7 @@ swift_buildpack_v2_0_4-20170125-2344    27         true      false    buildpack_
 
 Looking at the output above, we can see that the Swift buildpack is installed on the IBM Cloud. This will allow a seamless deployment of the starter application to the IBM Cloud.
 
-After you have cloned this Git repo, go to its root folder on your system and issue the `bx app push` command. Here is some sample output from the Swift buildpack (v2.0.5) running Swift 3.1:
+After you have cloned this Git repo, go to its root folder on your system and issue the `bx app push` command. Here is some sample output from the Swift buildpack (v2.0.15) running Swift 4.2:
 
 ```
 $ bx app push
@@ -145,7 +145,7 @@ Creating container
 Downloading app package...
 Downloaded app package (27.7K)
 Staging...
------> Buildpack version 2.0.14
+-----> Buildpack version 2.0.15
 -----> Default supported Swift version is 3.1
 -----> Copying deb files to installation folder...
 -----> No Aptfile found.
