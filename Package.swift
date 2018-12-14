@@ -30,7 +30,7 @@ let package = Package(
     dependencies: [
       .package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from: "2.5.0")),
       .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", .upToNextMajor(from: "1.7.1")),
-      .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "8.0.0")),
+      .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "9.0.0")),
       .package(url: "https://github.com/IBM-Swift/Health.git", .upToNextMajor(from: "1.0.0"))
     ],
     targets: [

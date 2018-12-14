@@ -64,7 +64,7 @@ class RouteTests: XCTestCase {
     .sendForTestingWithKitura { data in
       if let getResult = String(data: data, encoding: String.Encoding.utf8){
         print("GET to / endpoint returned: ", getResult)
-        XCTAssertTrue(getResult.contains("<h1 class=\"titleText\">IBM Kitura Starter Bluemix</h1>"))
+        XCTAssertTrue(getResult.contains("<h1 class=\"titleText\">IBM Cloud Kitura Starter</h1>"))
       } else {
         XCTFail("Return value from / was nil!")
       }
@@ -123,7 +123,7 @@ class RouteTests: XCTestCase {
         XCTFail("Failed to get JSON payload for Project structure from /json endpoint.")
         return
       }
-    
+
       print("GET to /hello endpoint returned: ", project)
       XCTAssertEqual(project.framework, "Kitura")
       XCTAssertEqual(project.applicationName, "Kitura-Starter")
