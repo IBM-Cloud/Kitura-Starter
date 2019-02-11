@@ -117,7 +117,7 @@ swift_buildpack_v2_0_4-20170125-2344    27         true      false    buildpack_
 
 Looking at the output above, we can see that the Swift buildpack is installed on the IBM Cloud. This will allow a seamless deployment of the starter application to the IBM Cloud.
 
-After you have cloned this Git repo, go to its root folder on your system and issue the `ibmcloud app push` command. Here is some sample output from the Swift buildpack (v2.0.16) running Swift 4.2.1:
+After you have cloned this Git repo, go to its root folder on your system and issue the `ibmcloud app push` command. Here is some sample output from the Swift buildpack (v2.0.17) running Swift 4.2.2:
 
 ```
 $ ibmcloud app push
@@ -145,15 +145,15 @@ Creating container
 Downloading app package...
 Downloaded app package (27.7K)
 Staging...
------> Buildpack version 2.0.16
+-----> Buildpack version 2.0.17
 -----> Default supported Swift version is 3.1
 -----> Copying deb files to installation folder...
 -----> No Aptfile found.
 -----> Configure for apt-get installs...
 -----> Writing profile script...
------> Getting swift-4.2.1
-       Cached swift-4.2.1
------> Unpacking swift-4.2.1.tar.gz
+-----> Getting swift-4.2.2
+       Cached swift-4.2.2
+-----> Unpacking swift-4.2.2.tar.gz
 -----> Getting clang-3.8.0
        Cached clang-3.8.0
 -----> Unpacking clang-3.8.0.tar.xz
