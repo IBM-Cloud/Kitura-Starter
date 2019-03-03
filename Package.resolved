@@ -123,8 +123,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/OpenSSL.git",
         "state": {
           "branch": null,
-          "revision": "203bfc87d003acf285ce3222f0de32e027f63e4a",
-          "version": "2.2.1"
+          "revision": "6c7e2e3610037fbc05c0d846cec981518961d8bf",
+          "version": "2.2.2"
         }
       },
       {

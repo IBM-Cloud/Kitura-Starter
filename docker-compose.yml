@@ -1,5 +1,5 @@
 app:
-  image: ibmcom/swift-ubuntu:4.2.2
+  image: ibmcom/swift-ubuntu:4.2.3
   ports:
     - "8080:8080"
   volumes:
