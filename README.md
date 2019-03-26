@@ -15,7 +15,7 @@
 Kitura-Starter is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on the IBM Cloud. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 14.04](http://www.ubuntu.com/download) system.
 
 ## Application Requirements
-To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `4.2+` release binaries. Compatibility with other Swift versions is not guaranteed.
+To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `5.0+` release binaries. Compatibility with other Swift versions is not guaranteed.
 
 For further details on executing Kitura-based applications locally, please see Kitura's instructions for installation on [macOS ](https://github.com/IBM-Swift/Kitura#installation-os-x) and on [Linux](https://github.com/IBM-Swift/Kitura#installation-linux-apt-based) since system level dependencies may be required before attempting to execute this starter app.
 
@@ -95,7 +95,7 @@ Getting buildpacks...
 buildpack                              position   enabled   locked   filename
 liberty-for-java                        1          true      false    buildpack_liberty-for-java_v3.8-20170308-1507.zip
 sdk-for-nodejs                          2          true      false    buildpack_sdk-for-nodejs_v3.11-20170303-1144.zip
-swift_buildpack                         3          true      false    buildpack_swift_v2.0.15-20170328-1639.zip
+swift_buildpack                         3          true      false    buildpack_swift_v2.0.19-20170328-1639.zip
 dotnet-core                             4          true      false    buildpack_dotnet-core_v1.0.10-20170124-1145.zip
 java_buildpack                          5          true      false    java-buildpack-v3.13.zip
 ruby_buildpack                          6          true      false    ruby_buildpack-cached-v1.6.34.zip
@@ -117,7 +117,7 @@ swift_buildpack_v2_0_4-20170125-2344    27         true      false    buildpack_
 
 Looking at the output above, we can see that the Swift buildpack is installed on the IBM Cloud. This will allow a seamless deployment of the starter application to the IBM Cloud.
 
-After you have cloned this Git repo, go to its root folder on your system and issue the `ibmcloud app push` command. Here is some sample output from the Swift buildpack (v2.0.18) running Swift 4.2.3:
+After you have cloned this Git repo, go to its root folder on your system and issue the `ibmcloud app push` command. Here is some sample output from the Swift buildpack (v2.0.19) running Swift 5.0:
 
 ```
 $ ibmcloud app push
@@ -145,18 +145,18 @@ Creating container
 Downloading app package...
 Downloaded app package (27.7K)
 Staging...
------> Buildpack version 2.0.18
------> Default supported Swift version is 3.1
+-----> Buildpack version 2.0.19
+-----> Default supported Swift version is 5.0
 -----> Copying deb files to installation folder...
 -----> No Aptfile found.
 -----> Configure for apt-get installs...
 -----> Writing profile script...
------> Getting swift-4.2.3
-       Cached swift-4.2.3
------> Unpacking swift-4.2.3.tar.gz
------> Getting clang-3.8.0
-       Cached clang-3.8.0
------> Unpacking clang-3.8.0.tar.xz
+-----> Getting swift-5.0
+       Cached swift-5.0
+-----> Unpacking swift-5.0.tar.gz
+-----> Getting clang-4.0.0
+       Cached clang-4.0.0
+-----> Unpacking clang-4.0.0.tar.xz
 -----> .ssh directory and config file not found.
 -----> Fetching Swift packages and parsing Package.swift files...
 -----> Skipping cache restore (new swift signature)
@@ -272,7 +272,7 @@ stack: cflinuxfs2
 buildpack: swift_buildpack
 
      state     since                    cpu    memory      disk      details
-#0   running   2017-03-07 08:58:10 AM   0.0%   0 of 256M   0 of 1G
+#0   running   2019-03-07 08:58:10 AM   0.0%   0 of 256M   0 of 1G
 ```
 
 Once the application is pushed to and running on the IBM Cloud, you can access your application route to see the welcome page for the Kitura-Starter app. You can log on to your [IBM Cloud account](https://cloud.ibm.com) to find the route of your application or you can inspect the output from the execution of the `ibmcloud app push` command.  The string value (e.g. Kitura-Starter-unfiducial-flab.eu-gb.mybluemix.net) shown next to the urls should contain the route.  Use that route as the URL to access the sample server using the browser of your choice.
