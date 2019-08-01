@@ -16,7 +16,7 @@
 
 # Builds a Docker image with all the dependencies for compiling and running the Kitura-Starter sample application.
 
-FROM ibmcom/swift-ubuntu:5.0
+FROM ibmcom/swift-ubuntu:5.0.2
 MAINTAINER IBM Swift Engineering at IBM Cloud
 LABEL Description="Docker image for building and running the Kitura-Starter sample application."
 
