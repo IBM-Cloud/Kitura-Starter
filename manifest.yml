@@ -5,6 +5,7 @@ applications:
   random-route: true
   disk_quota: 1024M
   command: Kitura-Starter
-  buildpack: swift_buildpack
+  buildpacks:
+    - swift_buildpack
   #health-check-type: http
   #health-check-http-endpoint: /health
