@@ -21,7 +21,9 @@ import Darwin
 #endif
 
 import Foundation
-import FoundationNetworking
+#if canImport(FoundationNetworking)
+  import FoundationNetworking
+#endif
 import Kitura
 import KituraNet
 import XCTest
