@@ -21,6 +21,7 @@ import Darwin
 #endif
 
 import Foundation
+import FoundationNetworking
 import Kitura
 import KituraNet
 import XCTest
