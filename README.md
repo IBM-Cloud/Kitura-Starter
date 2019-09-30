@@ -3,7 +3,7 @@
 [![Build Status - Master](https://travis-ci.org/IBM-Cloud/Kitura-Starter.svg?branch=master)](https://travis-ci.org/IBM-Cloud/Kitura-Starter)
 [![Join the chat at https://gitter.im/IBM-Swift/Kitura](https://badges.gitter.im/IBM-Swift/Kitura.svg)](https://gitter.im/IBM-Swift/Kitura?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![macOS](https://img.shields.io/badge/os-Mac%20OS%20X-green.svg?style=flat)](http://www.apple.com/macos/)
-[![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)](http://releases.ubuntu.com/14.04/)
+[![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)](http://releases.ubuntu.com/18.04/)
 [![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
 **IBM Cloud starter application for Kitura web framework and HTTP server**
@@ -12,7 +12,7 @@
 [Kitura](https://github.com/IBM-Swift/Kitura) is a new, modular, package-based web framework written in the Swift language, that allows you to build web services with complex routes, easily.
 
 ## Kitura-Starter Overview
-Kitura-Starter is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on the IBM Cloud. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 14.04](http://www.ubuntu.com/download) system.
+Kitura-Starter is a [Kitura](https://github.com/IBM-Swift/Kitura) based server application that you can use as a starting point to get your own Kitura application up and running on the IBM Cloud. Also, if you'd like to run this app locally, you can do so on your [macOS](http://www.apple.com/osx/) or [Ubuntu 18.04](http://www.ubuntu.com/download) system.
 
 ## Application Requirements
 To compile and run this starter application on your local system, you need to install the [Swift compiler](https://swift.org/download/) for your platform. This version of Kitura-Starter works with the Swift `5.0+` release binaries. Compatibility with other Swift versions is not guaranteed.
@@ -30,23 +30,55 @@ Once you have installed the Swift compiler and any system level dependencies req
 
 ```
 $ swift build
-Compile CHTTPParser utils.c
-Compile CHTTPParser http_parser.c
-Compile Swift Module 'KituraTemplateEngine' (1 sources)
-Compile Swift Module 'Socket' (3 sources)
-Compile Swift Module 'LoggerAPI' (1 sources)
-Compile Swift Module 'KituraContracts' (2 sources)
-Compile Swift Module 'HeliumLogger' (2 sources)
-Compile Swift Module 'Health' (3 sources)
-Compile Swift Module 'Configuration' (6 sources)
-Compile Swift Module 'CloudFoundryEnv' (6 sources)
-Compile Swift Module 'CloudEnvironment' (17 sources)
-Compile Swift Module 'SSLService' (1 sources)
-Compile Swift Module 'KituraNet' (36 sources)
-Compile Swift Module 'Kitura' (46 sources)
-Compile Swift Module 'Controller' (1 sources)
-Compile Swift Module 'Kitura_Starter' (1 sources)
-Linking ./.build/x86_64-apple-macosx10.10/debug/Kitura-Starter
+Fetching https://github.com/IBM-Swift/FileKit.git
+Fetching https://github.com/IBM-Swift/Kitura-net.git
+Fetching https://github.com/IBM-Swift/Kitura-TemplateEngine.git
+Fetching https://github.com/IBM-Swift/BlueSocket.git
+Fetching https://github.com/apple/swift-log.git
+Fetching https://github.com/IBM-Swift/TypeDecoder.git
+Fetching https://github.com/IBM-Swift/BlueSignals.git
+Fetching https://github.com/IBM-Swift/Swift-cfenv.git
+Fetching https://github.com/IBM-Swift/Health.git
+Fetching https://github.com/IBM-Swift/OpenSSL.git
+Fetching https://github.com/IBM-Swift/KituraContracts.git
+Fetching https://github.com/IBM-Swift/BlueSSLService.git
+Fetching https://github.com/IBM-Swift/Kitura.git
+Fetching https://github.com/IBM-Swift/LoggerAPI.git
+Fetching https://github.com/IBM-Swift/CloudEnvironment.git
+Fetching https://github.com/IBM-Swift/Configuration.git
+Fetching https://github.com/IBM-Swift/HeliumLogger.git
+Completed resolution in 41.89s
+Cloning https://github.com/IBM-Swift/LoggerAPI.git
+Resolving https://github.com/IBM-Swift/LoggerAPI.git at 1.9.0
+Cloning https://github.com/IBM-Swift/Kitura-TemplateEngine.git
+Resolving https://github.com/IBM-Swift/Kitura-TemplateEngine.git at 2.0.1
+Cloning https://github.com/IBM-Swift/KituraContracts.git
+Resolving https://github.com/IBM-Swift/KituraContracts.git at 1.1.3
+Cloning https://github.com/IBM-Swift/Health.git
+Resolving https://github.com/IBM-Swift/Health.git at 1.0.5
+Cloning https://github.com/IBM-Swift/TypeDecoder.git
+Resolving https://github.com/IBM-Swift/TypeDecoder.git at 1.3.3
+Cloning https://github.com/IBM-Swift/Swift-cfenv.git
+Resolving https://github.com/IBM-Swift/Swift-cfenv.git at 6.0.3
+Cloning https://github.com/IBM-Swift/BlueSSLService.git
+Resolving https://github.com/IBM-Swift/BlueSSLService.git at 1.0.48
+Cloning https://github.com/IBM-Swift/BlueSocket.git
+Resolving https://github.com/IBM-Swift/BlueSocket.git at 1.0.48
+Cloning https://github.com/IBM-Swift/Configuration.git
+Resolving https://github.com/IBM-Swift/Configuration.git at 3.0.4
+Cloning https://github.com/IBM-Swift/FileKit.git
+Resolving https://github.com/IBM-Swift/FileKit.git at 0.0.2
+Cloning https://github.com/IBM-Swift/Kitura-net.git
+Resolving https://github.com/IBM-Swift/Kitura-net.git at 2.3.0
+Cloning https://github.com/IBM-Swift/Kitura.git
+Resolving https://github.com/IBM-Swift/Kitura.git at 2.8.0
+Cloning https://github.com/IBM-Swift/CloudEnvironment.git
+Resolving https://github.com/IBM-Swift/CloudEnvironment.git at 9.1.0
+Cloning https://github.com/IBM-Swift/HeliumLogger.git
+Resolving https://github.com/IBM-Swift/HeliumLogger.git at 1.9.0
+Cloning https://github.com/apple/swift-log.git
+Resolving https://github.com/apple/swift-log.git at 1.1.0
+[169/169] Linking Kitura-Starter
 ```
 
 Once the application is compiled, you can start the server (note that the executable file is located in the `.build/debug` directory: `./.build/debug/Kitura-Starter`):

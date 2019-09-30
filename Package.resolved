@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "Signals",
-        "repositoryURL": "https://github.com/IBM-Swift/BlueSignals.git",
-        "state": {
-          "branch": null,
-          "revision": "6d13339441e687695f9980303594304599a03560",
-          "version": "1.0.20"
-        }
-      },
-      {
         "package": "Socket",
         "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
         "state": {
@@ -78,8 +69,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/Kitura.git",
         "state": {
           "branch": null,
-          "revision": "6595bc92d647eb6c4fc029618e9b7ca71ed8af3b",
-          "version": "2.8.0"
+          "revision": "0777165ed5b966ad2e62f9f9101cfa8b283e7684",
+          "version": "2.8.1"
         }
       },
       {
@@ -116,15 +107,6 @@
           "branch": null,
           "revision": "3357dd9526cdf9436fa63bb792b669e6efdc43da",
           "version": "1.9.0"
-        }
-      },
-      {
-        "package": "OpenSSL",
-        "repositoryURL": "https://github.com/IBM-Swift/OpenSSL.git",
-        "state": {
-          "branch": null,
-          "revision": "6c7e2e3610037fbc05c0d846cec981518961d8bf",
-          "version": "2.2.2"
         }
       },
       {
